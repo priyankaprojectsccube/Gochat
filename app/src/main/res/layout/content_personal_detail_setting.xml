@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Profile.PersonalDetailSettingActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/rellay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorblack"
+        android:padding="10dp"
+        >
+
+
+        <ImageView
+
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:src="@drawable/back_white"
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_back"/>
+
+
+        <TextView
+            android:id="@+id/texttitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            />
+
+
+
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/occupation_selection"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rellay">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textinputiaman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:editable="false"
+            android:focusable="false"
+            android:hint="I am an"
+            android:textColorHighlight="@color/colorblack"
+            android:textColorLink="@color/colorblack"
+            android:textCursorDrawable="@color/colorblack" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/desc_txtLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/occupation_selection">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/desc_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Describe Yourself(Optional)"
+            android:textColor="@color/colorblack"
+            android:textColorHighlight="@color/colorblack"
+            android:textColorHint="@color/colorblack"
+            android:textColorLink="@color/colorblack"
+            android:textCursorDrawable="@color/colorblack" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/linlaynoti"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:padding="5dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/desc_txtLayout">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="17sp"-->
+<!--            android:text="Push Notification"/>-->
+
+<!--        <Switch-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:id="@+id/push_notify_switch"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            />-->
+<!--    </RelativeLayout>-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/push_notify_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/desc_txtLayout"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pushnotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_arrow_right"
+                android:editable="false"
+                android:focusable="false"
+                android:text="Push Notification"
+                android:textColor="@color/colorblack"
+                android:textColorHighlight="@color/colorblack"
+                android:textColorLink="@color/colorblack"
+                android:textCursorDrawable="@color/colorblack" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--        <View-->
+<!--            android:id="@+id/view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0.5dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:background="@color/colorPrimary"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/push_notify_layout"/>-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/msg_notify_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/push_notify_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/msgnotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_arrow_right"
+                android:editable="false"
+                android:focusable="false"
+                android:text="Message Notification"
+                android:textColor="@color/colorblack"
+                android:textColorHighlight="@color/colorblack"
+                android:textColorLink="@color/colorblack"
+                android:textCursorDrawable="@color/colorblack" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/choose_profile_layout"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/msg_notify_layout">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:drawableRight="@drawable/ic_profile"-->
+    <!--            android:editable="false"-->
+    <!--            android:text="Choose Profile Picture"-->
+    <!--            android:textColorHighlight="@color/colorblack"-->
+    <!--            android:textColorLink="@color/colorblack"-->
+    <!--            android:textCursorDrawable="@color/colorblack" />-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/sync_contact_layout"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/sync_contact_switch"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/choose_profile_layout">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:editable="false"-->
+    <!--            android:text="Sync Contacts"-->
+    <!--            android:textColorHighlight="@color/colorblack"-->
+    <!--            android:textColorLink="@color/colorblack"-->
+    <!--            android:textCursorDrawable="@color/colorblack" />-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <Switch-->
+    <!--        android:id="@+id/sync_contact_switch"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="32dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/choose_profile_layout" />-->
+
+
+
+    <RelativeLayout
+        android:id="@+id/linlaynotisync"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/msg_notify_layout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="Sync Contacts"/>
+
+        <Switch
+            android:layout_alignParentEnd="true"
+            android:id="@+id/sync_notify_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linlaynotisync" />
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorred"
+        android:elevation="10dp"
+        android:text="Finish"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

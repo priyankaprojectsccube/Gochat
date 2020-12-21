@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Album.Activity.AlbumActivity">
+
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/relchallenge"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/challengimg"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:padding="8dp"
+            android:background="@drawable/background_round"
+   />
+
+
+            <TextView
+                android:layout_below="@+id/challengimg"
+                android:text="Challenge"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relcharity"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/charityimg"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/background_round"
+            android:padding="8dp"
+           />
+
+
+
+            <TextView
+                android:layout_below="@+id/charityimg"
+                android:text="Charity"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/reltraining"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+
+            android:id="@+id/trainimg"
+            android:layout_height="150dp"
+            android:padding="8dp"
+            android:background="@drawable/background_round"
+            android:layout_width="match_parent"
+         />
+
+            <TextView
+                android:layout_below="@+id/trainimg"
+                android:text="Training"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/relnews"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/newsimg"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:padding="8dp"
+                android:background="@drawable/background_round"
+               />
+
+
+            <TextView
+                android:layout_below="@+id/newsimg"
+                android:text="News"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/reladvertise"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/advimg"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/background_round"
+                android:padding="8dp"
+              />
+
+
+
+            <TextView
+                android:layout_below="@+id/advimg"
+                android:text="Advertisement"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:visibility="invisible"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+               android:id="@+id/test"
+                android:layout_height="150dp"
+                android:padding="8dp"
+                android:background="@drawable/background_round"
+                android:layout_width="match_parent"
+                android:src="@drawable/trainicon"/>
+
+            <TextView
+                android:layout_below="@+id/test"
+                android:text="Train"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fragframe"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/addimgicon"
+        android:layout_margin="16dp" />
+</LinearLayout>

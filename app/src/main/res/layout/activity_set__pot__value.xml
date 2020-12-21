@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+
+<LinearLayout
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputentertitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pot Value"
+        android:textColorHint="@color/colorblack"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_potvalue"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinputshortdec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Minimum Donation Value"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+        android:textColorHint="@color/colorblack"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_donationvalue"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:maxLength="10"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <Button
+
+                android:textSize="20sp"
+                android:id="@+id/setpotvalue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+android:layout_marginBottom="20dp"
+    android:layout_alignParentBottom="true"
+                android:background="@color/colorred"
+                android:textColor="@color/colorWhite"
+                android:text="SET POT VALUE"
+                android:padding="12dp"
+                android:textAllCaps="true"
+                />
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+</LinearLayout>
+
+

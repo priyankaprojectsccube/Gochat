@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Login.VerificationActivity">
+
+    <include layout="@layout/customtoolbar"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorgray"
+        android:layout_height="70dp">
+
+        <TextView
+            android:id="@+id/textname"
+            android:textSize="18sp"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorblack"
+        android:textSize="18sp"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="@string/enterverificationcode"
+        />
+
+    <com.mukesh.OtpView
+        android:id="@+id/otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:inputType="number"
+        android:clickable="true"
+        android:textSize="15sp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:itemBackground="@color/colorotpbackground"
+        android:textColor="@color/colorblack"
+        app:itemCount="4"
+        app:lineColor="@color/colorblack"
+        app:viewType="line"
+        />
+
+    <Button
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:id="@+id/btn_verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorred"
+        android:textColor="@color/colorWhite"
+        android:text="@string/proceedsecurly"
+        android:padding="12dp"
+        android:textAllCaps="true"
+        />
+</LinearLayout>
+
+</LinearLayout>

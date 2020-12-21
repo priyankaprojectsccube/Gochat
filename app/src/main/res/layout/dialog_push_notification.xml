@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_circorner"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_white_circorner">
+
+
+
+            <TextView
+
+                android:id="@+id/txt_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:paddingRight="40dp"
+                android:paddingLeft="40dp"
+                android:paddingTop="5dp"
+                android:textStyle="bold"
+                android:paddingBottom="5dp"
+                android:text="@string/pushnotification"
+                android:textColor="@color/colorred"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                >
+
+
+
+                <RelativeLayout
+                    android:id="@+id/linlaymycontact"
+                    android:layout_marginTop="30dp"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/desc_txtLayout">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textColor="@color/colorblack"
+                        android:text="My Contact"/>
+
+                    <Switch
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/my_contact_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/linlaymymember"
+                    android:layout_marginTop="30dp"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/desc_txtLayout">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textColor="@color/colorblack"
+                        android:text="My Member"/>
+
+                    <Switch
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/my_member_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/linlaymyfollower"
+                    android:layout_marginTop="30dp"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/desc_txtLayout">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="17sp"
+                        android:textColor="@color/colorblack"
+                        android:text="My Follower"/>
+
+                    <Switch
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/my_follower_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                </RelativeLayout>
+
+
+                <Button
+                    android:id="@+id/okbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="ok"
+                    android:background="@color/colorred"
+                    android:textColor="@color/colorWhite"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

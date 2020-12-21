@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="match_parent"
+     android:layout_width="wrap_content">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Challenge.Activity.ChallengeDetailActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/relativelayone"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+
+        <com.asksira.loopingviewpager.LoopingViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:autoScroll="true"
+            app:isInfinite="true"
+            app:scrollInterval="5000"
+            />
+
+        <com.rd.PageIndicatorView
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/pager"
+            android:layout_centerInParent="true"
+            app:piv_radius="6dp"
+            android:layout_centerHorizontal="true"
+            app:piv_animationType="color"
+            app:piv_unselectedColor="@color/colorview"
+            app:piv_selectedColor="@color/colorred"
+            app:piv_animationDuration="200"
+            app:piv_interactiveAnimation="true"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:background="@color/coloevewline"
+        android:layout_height="2dp"
+
+        />
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:id="@+id/challengename"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorred"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ci1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ci2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="13dp"
+              />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ci3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="25dp"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/peoplesubscribed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+
+            android:text=" "
+            android:textColor="@color/colorblack" />
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:background="@color/coloevewline"
+        android:layout_height="2dp"
+
+        />
+
+
+
+    <RelativeLayout
+        android:id="@+id/acceptchallenge_rellay"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorred">
+        <TextView
+            android:id="@+id/accept_challenge"
+            android:textColor="@color/colorWhite"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:text="Accept Challenge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:padding="15dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/whiteright"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/acceptedchallenge_rellay"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorlgtgreen">
+        <TextView
+            android:id="@+id/accepted_challenge"
+            android:textColor="@color/colorWhite"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:text="Challenge Accepted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:padding="15dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/whiteright"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/clock"
+            android:layout_marginTop="3dp"
+            android:id="@+id/imgclock"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imgclock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/colorblack"
+            android:text="Date"/>
+        <TextView
+            android:id="@+id/txtdatetime"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorblack"
+
+            />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+
+        android:layout_width="match_parent"
+        android:background="@color/coloevewline"
+        android:layout_height="2dp" />
+
+
+
+    <RelativeLayout
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/location"
+            android:id="@+id/imglocation"
+            android:layout_marginTop="3dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+        <LinearLayout
+            android:layout_toRightOf="@+id/imglocation"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/colorblack"
+            android:text="Location"/>
+
+        <TextView
+            android:id="@+id/txt_location"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorblack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/coloevewline"
+        android:layout_height="2dp"
+
+        />
+
+    <RelativeLayout
+        android:padding="15dp"
+        android:id="@+id/challengerdetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/username"
+        android:textSize="22sp"
+        android:textColor="@color/colorblack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:text="Message"
+            android:textColor="@color/colorred"
+            />
+
+        <RelativeLayout
+
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/followuser"
+                android:text="Follow"
+                android:textSize="16sp"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/follow_person"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/unfollowuser"
+                android:text="Unfollow"
+                android:textSize="16sp"
+                android:layout_toRightOf="@+id/followuser"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/follow_person"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+            <TextView
+
+                android:id="@+id/addtocontact"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/unfollowuser"
+                android:drawableLeft="@drawable/addperson"
+                android:drawablePadding="4dp"
+                android:text="Add to contact"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profpic"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/img_profile"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="vertical">
+    <TextView
+        android:text="Description"
+        android:textColor="@color/colorblack"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/map"
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_margin="5dp"
+    android:layout_height="150dp">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+
+
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/play2"
+        android:visibility="gone" />
+
+    <ImageView
+
+        android:id="@+id/imgdelete"
+        android:layout_width="20dp"
+        android:scaleType="fitXY"
+        android:background="@color/colorofwhite"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/delete"
+        android:layout_height="20dp" />
+</RelativeLayout>
+

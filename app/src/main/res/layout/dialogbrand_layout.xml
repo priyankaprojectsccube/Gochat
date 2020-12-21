@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:orientation="vertical"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+
+        android:textStyle="bold"
+        android:textSize="18sp"
+android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/colorred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:text="  Upload Profile Picture   ">
+
+    </TextView>
+    <LinearLayout
+         android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+         android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+ >
+
+
+        <TextView
+            android:id="@+id/gallary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/background_square"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/fromgallary"
+            android:textAllCaps="true"
+            android:textColor="@color/colorred"
+
+            android:textSize="10sp" />
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/camera"
+            android:layout_weight="1"
+            android:text="@string/takeaphoto"
+            android:layout_width="0dp"
+            android:padding="10dp"
+android:textSize="10sp"
+            android:textColor="@color/colorred"
+            android:background="@drawable/background_square"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>

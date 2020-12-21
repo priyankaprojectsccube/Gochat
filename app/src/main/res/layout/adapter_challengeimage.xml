@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="130dp"
+
+    android:padding="10dp">
+
+
+    <ImageView
+        android:background="@color/colorWhite"
+        android:id="@+id/imgvew"
+        android:layout_width="200dp"
+        android:scaleType="fitXY"
+        android:layout_height="200dp" />
+    <ImageView
+
+        android:id="@+id/imgdelete"
+        android:layout_width="25dp"
+        android:scaleType="fitXY"
+        android:background="@color/colorofwhite"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/delete"
+        android:layout_height="28dp" />
+</RelativeLayout>

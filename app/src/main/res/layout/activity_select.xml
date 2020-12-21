@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativelay"
+    android:background="@drawable/gochatsplashblur"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
+    tools:context=".Login.SelectActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorblueopaqe"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:fontFamily="@font/opensansbold"
+            android:padding="10dp"
+            android:textStyle="italic"
+            android:textColor="@color/colorred"
+            android:textSize="40sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:layout_above="@+id/linlaybutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_above="@+id/relativelayone"
+                        android:text="@string/howgochatwork"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativelayone"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+
+                        <com.asksira.loopingviewpager.LoopingViewPager
+                            android:id="@+id/pager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            app:autoScroll="true"
+                            app:isInfinite="true"
+                            app:scrollInterval="5000"
+                             />
+
+                        <com.rd.PageIndicatorView
+                            android:id="@+id/indicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pager"
+                            android:layout_marginTop="30dp"
+                            android:layout_centerInParent="true"
+                            app:piv_radius="5dp"
+                            android:layout_centerHorizontal="true"
+                            app:piv_animationType="fill"
+                            app:piv_unselectedColor="@color/colorlgtWhite"
+                            app:piv_animationDuration="200"
+                            app:piv_interactiveAnimation="true"/>
+
+                    </RelativeLayout>
+
+
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+
+                    android:id="@+id/linlaybutton"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/loginfacebook"
+                    android:layout_marginTop="50dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnlogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:layout_marginRight="5dp"
+                        android:background="@color/colorgray"
+                        android:text="@string/login"
+                        android:textColor="@color/colorred"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btnregister"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorgray"
+                        android:text="@string/register"
+                        android:textColor="@color/colorred"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <com.facebook.login.widget.LoginButton
+                    android:paddingLeft="10dp"
+                    android:paddingTop="14dp"
+
+                    android:paddingBottom="14dp"
+                    android:id="@+id/loginfacebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/logingoogle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="20dp"
+
+
+                    />
+
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/logingoogle"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="500dp"
+                    android:text="Sing In With Google"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+
+                    />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

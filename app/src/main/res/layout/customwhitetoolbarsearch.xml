@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:elevation="10dp"
+    android:id="@+id/rellay">
+
+
+    <ImageView
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:src="@drawable/back_black"
+        android:layout_centerVertical="true"
+        android:id="@+id/iv_back"
+        />
+
+
+    <EditText
+        android:textColorHint="@color/quantum_black_text"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/edtsearch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+      android:layout_toRightOf="@+id/iv_back"
+        android:background="@drawable/bg_gray_search"
+        android:padding="15dp"
+        android:hint="@string/search"
+        android:textAllCaps="false"
+        android:textColor="@color/colorblack"
+        android:textSize="15sp"
+        android:visibility="visible"
+    />
+
+
+
+
+
+
+
+</RelativeLayout>

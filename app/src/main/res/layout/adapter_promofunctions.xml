@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorblack"
+    android:orientation="vertical">
+
+<!--    forimage_ad-->
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
+android:background="@color/colorWhite"
+android:visibility="gone"
+        android:id="@+id/advrelimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/c1"
+android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="15dp"
+
+        android:id="@+id/category_cardview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:elevation="20dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <ImageView
+
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher"
+               />
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/l1"
+android:layout_below="@+id/c1"
+android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/adname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            android:maxLines="1"
+android:textStyle="bold"
+            android:textColor="@color/colorred"
+            android:textSize="18sp" />
+
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/heart_outline"
+            android:id="@+id/unfaviourate"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="0.2"
+            android:paddingTop="2dp" />
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/heart_redfill"
+            android:id="@+id/faviourate"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="0.2"
+            android:paddingTop="2dp" />
+
+    </LinearLayout>
+    <TextView
+      android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/des"
+        android:ellipsize="end"
+        android:textColor="@color/colorblack"
+        android:textSize="16sp"
+        android:text=""
+        android:maxLines="3"
+        android:layout_below="@id/l1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_margin="15dp"
+        android:layout_below="@id/des"
+
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/readmore"
+android:layout_gravity="center"
+            android:layout_weight="0.9"
+            android:textColor="@color/colorred"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="Read More"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+<!--        <TextView-->
+<!--            android:layout_weight="0.1"-->
+
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        </TextView>-->
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:weightSum="1.4"
+            android:orientation="horizontal"
+            android:layout_weight="1.8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ciI1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ciI2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="13dp"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ciI3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="25dp"
+                    />
+            </RelativeLayout>
+            <TextView
+                android:textColor="@color/colorblack"
+                android:layout_weight="0.7"
+                android:textSize="14sp"
+                android:id="@+id/likesI"
+android:layout_marginLeft="2dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+<!--        <ImageView-->
+<!--            android:layout_weight="0.2"-->
+<!--android:layout_gravity="center"-->
+<!--            android:src="@drawable/message"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="15dp">-->
+<!--        </ImageView>-->
+<!--        <TextView-->
+<!--            android:id="@+id/sendmessage"-->
+<!--android:layout_gravity="center"-->
+<!--            android:layout_weight="1.3"-->
+<!--            android:textColor="@color/colorblack"-->
+
+<!--            android:textSize="14sp"-->
+<!--            android:text="  Send Message"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        </TextView>-->
+        <ImageView
+android:id="@+id/commentsicon"
+            android:visibility="gone"
+            android:layout_gravity="center"
+android:layout_weight="0.2"
+            android:src="@drawable/message"
+            android:layout_width="0dp"
+            android:layout_height="15dp">
+        </ImageView>
+        <TextView
+            android:id="@+id/commentcount"
+android:layout_gravity="center"
+            android:layout_weight="1.3"
+            android:textColor="@color/colorblack"
+
+            android:textSize="14sp"
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </LinearLayout>
+    <TableRow
+android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/l2"
+        android:id="@+id/hr"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorblack"></TableRow>
+
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:weightSum="3"
+        android:layout_below="@id/hr"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:id="@+id/subscribe"
+            android:textColor="@color/colorblack"
+            android:textSize="14sp"
+            android:text="Subscribe"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:id="@+id/subscribed"
+            android:textColor="@color/colorblack"
+            android:textSize="14sp"
+            android:text="Subscribed"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <ImageView
+            android:layout_weight="0.2"
+android:layout_gravity="center"
+            android:src="@drawable/message"
+            android:layout_width="0dp"
+            android:layout_height="15dp">
+        </ImageView>
+        <TextView
+            android:id="@+id/comment"
+            android:textColor="@color/colorblack"
+            android:textSize="14sp"
+            android:text="  Comment"
+            android:layout_weight="1.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <ImageView
+            android:layout_weight="0.2"
+      android:layout_gravity="center"
+             app:tint="@color/colorblack"
+            android:src="@drawable/ic_baseline_share_24"
+            android:layout_width="0dp"
+            android:layout_height="15dp">
+        </ImageView>
+        <TextView
+android:layout_gravity="center"
+            android:id="@+id/share"
+            android:textColor="@color/colorblack"
+            android:textSize="14sp"
+            android:text="  Share"
+            android:layout_weight="0.4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </LinearLayout>
+    </RelativeLayout>
+
+<!--    //forVideo_ad-->
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorWhite"
+android:visibility="gone"
+        android:id="@+id/advrelvideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<LinearLayout
+    android:layout_marginRight="15dp"
+    android:layout_marginLeft="15dp"
+    android:id="@+id/l3"
+    android:layout_marginTop="15dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profimg"
+        android:src="@drawable/ic_launcher"
+        android:layout_width="40dp"
+        android:layout_height="40dp">
+
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/colorblack"
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:textSize="12sp"
+            android:textColor="@color/colorblack"
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </LinearLayout>
+</LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_below="@+id/l3"
+            android:id="@+id/c2"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="15dp"
+
+                android:id="@+id/category_cardview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:elevation="20dp"
+                tools:ignore="MissingConstraints">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+                    <ImageView
+
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/playimg"
+                    android:layout_centerInParent="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+
+                        android:src="@drawable/play2"
+                    />
+                </RelativeLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/l4"
+            android:weightSum="3"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/c2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<LinearLayout
+    android:weightSum="1.4"
+    android:orientation="horizontal"
+    android:layout_weight="1.3"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content">
+            <RelativeLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ci1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ci2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="13dp"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ci3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="25dp"
+                    />
+            </RelativeLayout>
+            <TextView
+android:textColor="@color/colorblack"
+                android:layout_weight="0.7"
+                android:textSize="14sp"
+                android:id="@+id/likes"
+android:layout_marginLeft="2dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+</LinearLayout>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/commenticon2"
+                android:layout_gravity="center"
+                android:src="@drawable/message"
+                android:layout_width="15dp"
+                android:layout_height="15dp">
+            </ImageView>
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/comment2"
+                android:textColor="@color/colorblack"
+                android:textSize="14sp"
+                android:text=""
+                android:layout_weight="1.3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+            <ImageView
+
+                android:layout_weight="0.2"
+               android:layout_gravity="center_horizontal"
+
+                android:id="@+id/challengetype"
+                android:layout_width="0dp"
+                android:layout_height="15dp">
+
+            </ImageView>
+        </LinearLayout>
+        <TableRow
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@+id/l4"
+            android:id="@+id/h1r"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorblack"></TableRow>
+
+<!--<LinearLayout-->
+
+<!--    android:weightSum="3"-->
+<!--    android:layout_below="@id/h1r"-->
+<!--    android:layout_margin="15dp"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content">-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/like"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_gravity="center"-->
+
+<!--        android:src="@drawable/heart_redfill"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="15dp">-->
+<!--    </ImageView>-->
+<!--    <ImageView-->
+<!--        android:id="@+id/unlike"-->
+
+<!--        android:layout_weight="1"-->
+<!--        android:layout_gravity="center"-->
+
+<!--        android:src="@drawable/heart_outline"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="15dp">-->
+<!--    </ImageView>-->
+<!--    <TextView-->
+<!--        android:layout_gravity="center"-->
+<!--android:visibility="gone"-->
+<!--        android:textColor="@color/colorblack"-->
+<!--        android:textSize="14sp"-->
+<!--        android:text="   Like"-->
+<!--        android:layout_weight="0.6"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--    </TextView>-->
+<!--    <ImageView-->
+<!--        android:layout_weight="0.2"-->
+<!--android:layout_gravity="center"-->
+<!--        android:src="@drawable/message"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="15dp">-->
+
+<!--    </ImageView>-->
+<!--    <TextView-->
+<!--        android:layout_gravity="center"-->
+<!--android:id="@+id/comment22"-->
+<!--        android:textColor="@color/colorblack"-->
+<!--        android:textSize="14sp"-->
+<!--        android:text="  Comment"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--    </TextView>-->
+<!--    <ImageView-->
+<!--        android:layout_weight="0.2"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:tint="@color/colorblack"-->
+<!--        android:src="@drawable/ic_baseline_share_24"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="15dp">-->
+<!--    </ImageView>-->
+<!--    <TextView-->
+<!--        android:layout_gravity="center"-->
+<!--        android:id="@+id/share2"-->
+<!--        android:textColor="@color/colorblack"-->
+<!--        android:textSize="14sp"-->
+<!--        android:text="   Share"-->
+<!--        android:layout_weight="0.6"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--    </TextView>-->
+<!--<ImageView-->
+<!--    android:visibility="gone"-->
+<!--    android:layout_weight="0.2"-->
+<!-- android:layout_gravity="center"-->
+<!--    android:src="@drawable/message"-->
+<!--    android:layout_width="0dp"-->
+<!--    android:layout_height="15dp">-->
+
+<!--</ImageView>-->
+<!--    <TextView-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:id="@+id/message2"-->
+<!--        android:textColor="@color/colorblack"-->
+<!--        android:textSize="14sp"-->
+<!--        android:text="  Message"-->
+<!--        android:layout_weight="0.8"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--    </TextView>-->
+
+<!--</LinearLayout>-->
+        <LinearLayout
+            android:layout_margin="15dp"
+            android:weightSum="3"
+            android:layout_below="@id/h1r"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:visibility="gone"
+                android:layout_gravity="center"
+               android:id="@+id/like"
+                android:src="@drawable/heart_redfill"
+                android:layout_weight="0.3"
+                android:layout_width="0dp"
+                android:layout_height="15dp">
+
+            </ImageView>
+            <ImageView
+android:visibility="gone"
+                android:layout_gravity="center"
+           android:id="@+id/unlike"
+                android:src="@drawable/heart_outline"
+                android:layout_weight="0.3"
+                android:layout_width="0dp"
+                android:layout_height="15dp">
+
+            </ImageView>
+            <TextView
+
+                android:textColor="@color/quantum_black_text"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:text="Like"
+                android:layout_weight="0.7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <ImageView
+                android:layout_weight="0.2"
+                android:layout_gravity="center"
+                android:src="@drawable/message"
+                android:layout_width="0dp"
+                android:layout_height="15dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/comment22"
+                android:textColor="@color/colorblack"
+                android:textSize="14sp"
+                android:text="  Comment"
+                android:layout_weight="1.2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <ImageView
+                android:layout_weight="0.2"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_share_24"
+                android:layout_width="0dp"
+                android:layout_height="15dp"
+                app:tint="@color/colorblack">
+
+            </ImageView>
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/share2"
+                android:textColor="@color/colorblack"
+                android:textSize="14sp"
+                android:text="  Share"
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+<!--forimage_new-->
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorWhite"
+android:visibility="gone"
+        android:id="@+id/newsrelimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/llnewsimg"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profimg_news_img"
+                android:src="@drawable/ic_launcher"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <LinearLayout
+                android:weightSum="2"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_weight="1.7"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorblack"
+                        android:id="@+id/namenewsimg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorblack"
+                        android:id="@+id/timenewsimg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+              <ImageView
+                  android:id="@+id/deleteimgnews"
+                  android:layout_gravity="center"
+                  android:layout_weight="0.3"
+                  android:src="@drawable/ic_baseline_delete_24"
+                  android:layout_width="0dp"
+                  android:layout_height="25dp">
+
+              </ImageView>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@id/llnewsimg"
+            android:id="@+id/captionimgll"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/captionimgnews"
+                android:textSize="14sp"
+                android:textColor="@color/quantum_black_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_below="@+id/captionimgll"
+            android:id="@+id/c2newsimg"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="15dp"
+
+                android:id="@+id/category_cardview2newsimg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:elevation="20dp"
+                tools:ignore="MissingConstraints">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+                    <ImageView
+
+                        android:id="@+id/imgviewnews"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+
+                        />
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/playimgnews"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="40dp"-->
+
+<!--                        android:src="@drawable/play2"-->
+<!--                        />-->
+                </RelativeLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/l4newsimg"
+            android:weightSum="3"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/c2newsimg"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:weightSum="1.4"
+                android:orientation="horizontal"
+                android:layout_weight="1.3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:id="@+id/like_imgnew"
+                    android:src="@drawable/heart_redfill"
+                    android:layout_weight="0.3"
+                    android:layout_width="0dp"
+                    android:layout_height="15dp">
+
+                </ImageView>
+                <ImageView
+android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:id="@+id/unlike_imgnew"
+                    android:src="@drawable/heart_outline"
+                    android:layout_weight="0.3"
+                    android:layout_width="0dp"
+                    android:layout_height="15dp">
+
+                </ImageView>
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ci1imgnews"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ci2imgnews"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="13dp"
+                        />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ci3imgnews"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="25dp" />
+                </RelativeLayout>
+                <TextView
+                    android:textColor="@color/colorblack"
+                    android:layout_weight="0.7"
+                    android:textSize="14sp"
+                    android:id="@+id/likesimgnews"
+android:layout_marginLeft="2dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </LinearLayout>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/commenticonimgnews"
+                android:layout_gravity="center"
+                android:src="@drawable/message"
+                android:layout_width="15dp"
+                android:layout_height="15dp">
+            </ImageView>
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/commentimgnew"
+                android:textColor="@color/colorblack"
+                android:textSize="14sp"
+                android:text=""
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+            <ImageView
+
+                android:layout_weight="0.2"
+                android:layout_gravity="center"
+                app:tint="@color/colorblack"
+                android:src="@drawable/ic_baseline_share_24"
+                android:layout_width="0dp"
+                android:layout_height="15dp">
+            </ImageView>
+            <TextView
+
+                android:layout_gravity="center"
+                android:id="@+id/shareimgnews"
+                android:textColor="@color/colorblack"
+                android:textSize="14sp"
+                android:text="  Share"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <!--    //forVideo_news-->
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorWhite"
+android:visibility="gone"
+        android:id="@+id/newsrelvideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/llnews"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profimg_news"
+                android:src="@drawable/ic_launcher"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_weight="1.7"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorblack"
+                        android:id="@+id/namenews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <TextView
+
+                        android:textSize="12sp"
+                        android:textColor="@color/colorblack"
+                        android:id="@+id/timenews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/deletevdonews"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp">
+
+                </ImageView>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@id/llnews"
+            android:id="@+id/captionvideoll"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/captionvideonews"
+                android:textSize="14sp"
+                android:textColor="@color/quantum_black_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_below="@+id/captionvideoll"
+            android:id="@+id/c2news"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="15dp"
+
+                android:id="@+id/category_cardview2news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:elevation="20dp"
+                tools:ignore="MissingConstraints">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+                    <ImageView
+
+                        android:id="@+id/videoviewnews"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/playimgnews"
+                        android:layout_centerInParent="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+
+                        android:src="@drawable/play2"
+                        />
+                </RelativeLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/l4news"
+            android:weightSum="3"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/c2news"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:weightSum="1.4"
+                android:orientation="horizontal"
+                android:layout_weight="1.3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:id="@+id/like_videonew"
+                    android:src="@drawable/heart_redfill"
+                    android:layout_weight="0.3"
+                    android:layout_width="0dp"
+                    android:layout_height="15dp">
+
+                </ImageView>
+                <ImageView
+android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:id="@+id/unlike_videonew"
+                    android:src="@drawable/heart_outline"
+                    android:layout_weight="0.3"
+                    android:layout_width="0dp"
+                    android:layout_height="15dp">
+
+                </ImageView>
+                <RelativeLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ci1videonews"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ci2videonews"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="13dp"
+                        />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ci3videonews"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="25dp"
+                        />
+                </RelativeLayout>
+                <TextView
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/colorblack"
+                    android:layout_weight="0.7"
+                    android:textSize="14sp"
+                    android:id="@+id/likesvideonews"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </LinearLayout>
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/commenticonvideonews"
+                android:layout_gravity="center"
+                android:src="@drawable/message"
+                android:layout_width="15dp"
+                android:layout_height="15dp">
+            </ImageView>
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/commentvideonew"
+                android:textColor="@color/colorblack"
+                android:textSize="14sp"
+                android:text=""
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+            <ImageView
+
+                android:layout_weight="0.2"
+                android:layout_gravity="center"
+                app:tint="@color/colorblack"
+                android:src="@drawable/ic_baseline_share_24"
+                android:layout_width="0dp"
+                android:layout_height="15dp">
+            </ImageView>
+            <TextView
+
+                android:layout_gravity="center"
+                android:id="@+id/sharevideonews"
+                android:textColor="@color/colorblack"
+                android:textSize="14sp"
+                android:text="  Share"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

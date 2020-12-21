@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:layout_height="wrap_content">
+
+    <!--<de.hdodenhof.circleimageview.CircleImageView-->
+    <!--android:layout_width="40dp"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:id="@+id/profile_image"-->
+    <!--android:src="@mipmap/ic_launcher"/>-->
+    <LinearLayout
+        android:id="@+id/laylin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/background_left">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_message"
+            android:textSize="15sp"
+            android:textColor="@color/quantum_black_text"
+            android:padding="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/show_message"
+            android:id="@+id/show_time"
+            android:padding="5dp"
+            android:paddingRight="5dp"
+            android:textSize="10sp"
+            android:textColor="@color/quantum_black_text" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_seen"
+        android:visibility="gone"
+        android:layout_below="@id/laylin"/>
+
+
+</RelativeLayout>

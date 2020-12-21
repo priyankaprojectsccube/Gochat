@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/coloropaque2"
+    android:layout_height="match_parent"
+    tools:context=".Home.MenuActivity">
+
+    <include layout="@layout/customtoolbarmenu"/>
+
+    <TextView
+        android:id="@+id/text_mychallenges"
+        android:text="My Challenges"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:layout_toEndOf="@+id/imgvew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"/>
+    <TextView
+        android:id="@+id/text_favchallenges"
+        android:text="Favourite Challenges"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:layout_toEndOf="@+id/imgvew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"/>
+
+
+    <TextView
+            android:id="@+id/text_follower"
+            android:text="My Followers"
+            android:layout_margin="20dp"
+            android:textSize="18sp"
+            android:layout_toEndOf="@+id/imgvew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/text_pots"
+        android:text="Pots"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:layout_toEndOf="@+id/imgvew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:id="@+id/text_logout"
+        android:text="Logout"
+        android:layout_margin="20dp"
+        android:layout_toEndOf="@+id/imgvew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"/>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

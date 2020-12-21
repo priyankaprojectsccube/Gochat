@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ccube9.gochat">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:icon,android:theme">
+        <activity android:name=".Pot.Activity.WebViewActivity" />
+        <activity
+            android:name=".Pot.Activity.ProfileInstaActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.Search_Pot"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Pot.Activity.ContributionActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.PotList"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.Participated_List"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.Pot_Chatlenge"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.Set_Pot_Value"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.Create_Pot_Challenge_3"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.Create_Pot_Challenge_2"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.Pot_Challenge_Association"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.Create_Pot_Challenge"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Pot.Activity.PotActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Home.Fragment.Winnername"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Home.Fragment.Request_for_winner"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Album.Activity.AlbumDetails"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".News.Activity.NewsPreview"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Communication.Activity.CommunicationWindow"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Communication.Activity.Commnucation_User_List"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".News.Activity.MyStoriesPage"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".News.Activity.ViewStory"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Home.Fragment.NotificationActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".News.Activity.CommentsActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".News.Activity.RepliesActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Profile.MyChallengeActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Search.Activity.SearchActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".Pot.Activity.CheckoutActivityJava"
+            android:theme="@style/AppTheme">
+
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Album.Activity.AddAlbumActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Challenge.Activity.FavouriteChallengeActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Album.Activity.AlbumActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Profile.FollowerActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".News.Activity.GalleryPreview"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Challenge.Activity.CharityEditActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Challenge.Activity.TrainingEditActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Challenge.Activity.ChallengeEditActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Profile.ChallengerDetailActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Home.MenuActivity" />
+        <activity
+            android:name=".News.Activity.NewsFunctions"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Profile.ChangeSettingActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Profile.EditProfileActivity" />
+        <activity
+            android:name=".Challenge.Activity.Challengesubcategoryaccepted"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Challenge.Activity.CharitytaskaddActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Challenge.Activity.TrainningtaskaddActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Challenge.Activity.ChallengetaskaddActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".Challenge.Activity.ChallangeAcceptedActivity" />
+        <activity android:name=".Challenge.Activity.ChallangeaddedbymeActivity" />
+        <activity
+            android:name=".Challenge.Activity.ChallangesubcategoryActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Challenge.Activity.ChallengeCategoryActivity"
+            android:label="Choose Challenges"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Profile.ProfilePicActivity"
+            android:label="@string/profilepicture"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Challenge.Activity.ChallengeDetailActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Challenge.Activity.MyChallengeDetailActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Profile.ProfileActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Profile.PersonalDetailSettingActivity"
+            android:label="@string/personaldetail" />
+        <activity
+            android:name=".Profile.PersonalDetailActivity"
+            android:label="@string/personaldetail"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".Splash.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBarNew">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login.SelectActivity" />
+
+        <service
+            android:name=".Util.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".Login.LoginActivity"
+            android:theme="@style/AppThemewhite.NoActionBar" />
+        <activity android:name=".Login.CreatepasswordActivity" />
+        <activity android:name=".Login.VerificationActivity" />
+        <activity android:name=".Login.CreateaccountActivity" />
+        <activity android:name=".Home.HomeActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

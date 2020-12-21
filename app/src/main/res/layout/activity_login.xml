@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gochatsplashblur"
+    android:orientation="vertical"
+    tools:context=".Login.SelectActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorblueopaqe"
+        android:orientation="vertical"
+        >
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:padding="10dp"
+            android:fontFamily="@font/opensansbold"
+            android:textColor="@color/colorred"
+            android:textSize="40sp" />
+
+
+
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rellayfor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputusername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/linlaypassword"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:hint="@string/emailidormobileno"
+                    android:textColorHint="@color/colorWhite"
+                    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayoutwhite"
+                    android:layout_marginBottom="30dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/username"
+                        android:textSize="14sp"
+                        android:padding="10dp"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/colorWhite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/linlaypassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/colorlgtWhite"
+                    android:layout_centerInParent="true"
+                    android:textColorHint="@color/colorWhite"
+                    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayoutwhite"
+                    android:layout_marginBottom="30dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password"
+                        android:textSize="14sp"
+                        android:padding="10dp"
+                        android:textColor="@color/colorWhite"
+                        android:inputType="textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/forgotpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linlaypassword"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:text="@string/forgotpass"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+
+
+
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/register"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorred"
+                android:gravity="center"
+                android:padding="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/login"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:padding="15dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorWhite"
+                android:text="@string/register"
+                android:textColor="@color/colorblack"
+                />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

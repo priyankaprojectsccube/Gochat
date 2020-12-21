@@ -1,0 +1,147 @@
+<resources>
+
+    <string name="facebook_app_id">766262490813029</string>
+    <string name="fb_login_protocol_scheme">fb766262490813029</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCLMSe6MRTZJ94I8xVHbptpBRl4CFwcKRk</string>
+    <!--    AIzaSyA12Jf2auCE4CkpiflDKVDg5BI8R5EgW04-->
+    <string name="app_name">Go Chat</string>
+    <string name="hi">Hi</string>
+    <string name="howgochatwork"><b>How Go Chat works?</b></string>
+    <string name="createprofilestartworking">Create profile and start receiving challenges.</string>
+    <string name="login">Login</string>
+    <string name="email_error">Invalid Email Id</string>
+    <string name="pass_error"> Password must be at least 6 characters</string>
+    <string name="next">Next</string>
+    <string name="error_gif">x or y bound size should be at least %1$dpx and file size should be no more than %2$sM</string>
+
+
+    <string name="pleaseselectgender">Please select gender</string>
+    <string name="pleaseselectprofpic">Please select Profile picture</string>
+    <string name="con_pass_error">Password does not match</string>
+    <string name="fill_field">Please fill the field</string>
+    <string name="servernotfound">The server could not be found. Please try again after some time!!</string>
+    <string name="cannotconnectinternate">Cannot connect to Internet...Please check your connection!</string>
+    <string name="tryagain">Parsing error! Please try again after some time!!</string>
+    <string name="connectiontimeout">Connection TimeOut! Please check your internet connection.</string>
+    <string name="invalidemailmob">Please enter valid email id or mobile number</string>
+    <string name="invalideiban">Please enter valid IBAN</string>
+    <string name="invalidswiftcode">Please enter valid Swift code</string>
+    <string name="loginagain">Please login again...</string>
+    <string name="forgotpass">Forgot Password</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="dateofbirth">Date Of Birth</string>
+    <string name="verify"><u>Verify</u></string>
+    <string name="new_pass">New Password</string>t
+    <string name="new_con_pass">Confirm New Password</string>
+    <string name="iwenttoschoolinoptional">I went to school in(Optional)</string>
+    <string name="iwenttoschoolin">I went to school in</string>
+    <string name="mob_no_error">Invalid Mobile Number</string>
+    <string name="register">Register</string>
+    <string name="skip">skip</string>
+    <string name="setyourprofilepic">Set your Profile Picture</string>
+    <string name="profilepicture">Profile Picture</string>
+    <string name="anerroroccured">An error occured</string>
+    <string name="personaldetail">Personal Detail</string>
+    <string name="stringone">Create profile and start receiving challenges.</string>
+    <string name="stringtwo">Search for people with same interest over 10 lakh profiles.</string>
+    <string name="stringthree">Send personalized message and make a deal.</string>
+    <string name="createaccount">Create Account</string>
+    <string name="messagenotification">Message Notification</string>
+    <string name="pushnotification">Push Notification</string>
+    <string name="continuewithfb">Continue with Facebook</string>
+    <string name="continuewithgoogle">Continue with Google</string>
+    <string name="proceedsecurly">Proceed Securely</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="uploadpic">Upload Photo</string>
+    <string name="storage_permission">Gochat needs permission to Storage for performing this action.To enable tap on Settings and provide storage permission</string>
+    <string name="camera_permission">Gochat needs permission to Camera for clicking picture(s).To enable tap on Settings and provide camera permission</string>
+    <string name="permitmanually">SETTINGS</string>
+    <string name="enteremail">Enter Email</string>
+    <string name="pleaseaccept">Please accept Terms and Condition</string>
+    <string name="enterverificationcode">Enter Verification code</string>
+    <string name="enterregisteremailidormobno">Enter your registered Email ID</string>
+    <string name="verificationcode">Verification Code</string>
+    <string name="createpassword">Create Password</string>
+    <string name="password">Password</string>
+    <string name="verifymobileno">Verify Mobile number</string>
+    <string name="search">Search</string>
+    <string name="searchchalusercity">Search Challenge,User,City</string>
+    <string name="fromgallary">From Gallary</string>
+    <string name="takeaphoto">Take a Photo</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="mobileno">Mobile number</string>
+    <string name="emailidormobileno">Enter Email ID or Mobile Number</string>
+    <string name="accepttermcon">I would like to receive updates from Go Chat</string>
+    <string name="all">All</string>
+    <string name="contact">Contact</string>
+    <string name="subscriber">Subscriber</string>
+
+    <string-array name="challengefor">
+        <item>What you offer for challenge winner?</item>
+        <item>Sum of money</item>
+        <item>Meal at restaurant</item>
+        <item>Valuable item</item>
+        <item>Donate</item>
+        <item>Training</item>
+
+    </string-array>
+
+    <string-array name="selectcategory">
+        <item>Select Category</item>
+        <item>Technology</item>
+        <item>For The Planet</item>
+        <item>My Township</item>
+        <item>Health</item>
+        <item>Wishes for the kids unwell</item>
+        <item>Education</item>
+        <item>Sports</item>
+        <item>My Commuinity</item>
+        <item>Help</item>
+        <item>Art and Culture</item>
+
+    </string-array>
+
+    <string-array name="selectpot">
+        <item>Select pot to donate</item>
+        <item>Technology</item>
+        <item>For The Planet</item>
+        <item>My Township</item>
+        <item>Health</item>
+        <item>Wishes for the kids unwell</item>
+        <item>Education</item>
+        <item>Sports</item>
+        <item>My Commuinity</item>
+        <item>Help</item>
+        <item>Art and Culture</item>
+    </string-array>
+
+    <string-array name="docarry">
+        <item>Select Document</item>
+        <item>ID of the Holder</item>
+        <item>ID of the Kid</item>
+        <item>Hospital Documents</item>
+        <item>Proof Of Income</item>
+        <item>Certificate of Residence</item>
+        <item>Evidence of child patology</item>
+        <item>Household composition of holder</item>
+        <item>Authorization of holder of child</item>
+        <item>Doctors Authorization</item>
+        <item>Plan and list of costs of holder</item>
+    </string-array>
+
+    <string-array name="langarray">
+        <item>Select Language</item>
+        <item>English</item>
+        <item>French</item>
+
+    </string-array>
+
+    <string name="title_activity_challenger_detail">ChallengerDetailActivity</string>
+
+    <string name="action_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

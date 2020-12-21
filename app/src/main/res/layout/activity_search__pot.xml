@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Challenge.Activity.FavouriteChallengeActivity">
+
+    <LinearLayout
+        android:weightSum="3"
+android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/pottitle"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:textColor="@color/quantum_black_text"
+            android:gravity="center"
+            android:inputType="text"
+            android:background="@null"
+            android:hint="Pot Title"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </EditText>
+        <EditText
+            android:id="@+id/location"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:textColor="@color/quantum_black_text"
+            android:gravity="center"
+            android:hint="Location"
+            android:inputType="text"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </EditText>
+        <TextView
+            android:id="@+id/find"
+            android:background="@color/colorred"
+            android:textColor="@color/quantum_black_text"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="Find"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+        </TextView>
+    </LinearLayout>
+    <TableRow
+
+        android:layout_below="@+id/l4"
+        android:id="@+id/h1r"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/quantum_grey"></TableRow>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recvewsearchpot"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

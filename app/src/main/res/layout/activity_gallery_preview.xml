@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:weightSum="2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_margin="5dp"
+        android:layout_weight="1.8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        ></androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/poststorytxt"
+        android:textStyle="bold"
+        android:textColor="@color/quantum_black_text"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_gravity="end"
+        android:text="Post"
+        android:layout_weight="0.2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp">
+
+    </TextView>
+
+    <TextView
+
+        android:id="@+id/noimgselect"
+
+        android:textColor="@color/quantum_black_text"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:gravity="center"
+
+        android:text="No data found"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TextView>
+</LinearLayout>

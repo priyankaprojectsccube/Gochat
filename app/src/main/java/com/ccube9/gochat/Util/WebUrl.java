@@ -5,8 +5,8 @@ import android.webkit.WebView;
 public class WebUrl {
 
 
-    public static final String Web_url ="https://ccube9.com/gochat/app/User/";
-    public static final String Base_url="https://ccube9.com/gochat/";
+    public static final String Web_url ="https://cube9projects.co.in/gochat/app/User/";//https://ccube9.com/gochat/app/User/
+    public static final String Base_url="https://cube9projects.co.in/gochat/";//https://ccube9.com/gochat/
     public static final String Register_url= Web_url +"user_registration";
     public static final String ismailverified_url=Web_url+"email_verification_status";
     public static final String Register_mobile_url= Web_url +"user_registration_mobile";

@@ -244,6 +244,7 @@ if(jsonObject.getString("notification_count") !=null){
                         JSONObject jsonObject1=jsonArray.getJSONObject(0);
 
                         String imageurl = Base_url.concat(jsonObject1.getString("profile_image"));
+                        Log.d("checkimage",imageurl);
                         new HomeActivity.MyAsyncTask().execute(imageurl);
 
 

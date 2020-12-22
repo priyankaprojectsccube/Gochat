@@ -32,6 +32,7 @@ import com.ccube9.gochat.R;
 import com.ccube9.gochat.Util.MySingleton;
 import com.ccube9.gochat.Util.PrefManager;
 import com.ccube9.gochat.Util.TransparentProgressDialog;
+import com.ccube9.gochat.Util.WebUrl;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -49,7 +50,10 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
@@ -329,8 +333,10 @@ Log.d("checkamt",amount);
 //                        true
 //                );
 
-                Toast.makeText(CheckoutActivityJava.this, "Payment Success", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(CheckoutActivityJava.this, "Payment Success", Toast.LENGTH_SHORT).show();
                 String succ = gson.toJson(paymentIntent);
+                String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+                callsecondapi(succ,date);
                 Log.d("paymentsuc",succ);
             } else if (status == PaymentIntent.Status.RequiresPaymentMethod) {
                 // Payment failed – allow retrying using a different payment method
@@ -353,5 +359,87 @@ Log.d("checkamt",amount);
             // Payment request failed – allow retrying using the same payment method
             activity.displayAlert("Error", e.toString(), false);
         }
+    }
+
+    private void callsecondapi(String date, String succ) {
+        pd.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, WebUrl.create_striperesponse, new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                pd.dismiss();
+
+                Log.d("create_striperesponse", response);
+
+                try {
+
+                    JSONObject jsonObject = new JSONObject(response);
+
+
+                    if (jsonObject.getString("status").equals("1")) {
+
+
+                        Toast.makeText(CheckoutActivityJava.this,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(CheckoutActivityJava.this, Pot_Chatlenge.class);
+                        intent.putExtra("pot_id",pot_id);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(CheckoutActivityJava.this,"Something went wrong",Toast.LENGTH_SHORT).show();
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                pd.dismiss();
+                Log.d("create_striperesponse", volleyError.toString());
+                String message = null;
+                if (volleyError instanceof NetworkError) {
+                    message = getResources().getString(R.string.cannotconnectinternate);
+                } else if (volleyError instanceof ServerError) {
+                    message = getResources().getString(R.string.servernotfound);
+                } else if (volleyError instanceof AuthFailureError) {
+                    message = getResources().getString(R.string.loginagain);
+                } else if (volleyError instanceof ParseError) {
+                    message = getResources().getString(R.string.tryagain);
+                } else if (volleyError instanceof NoConnectionError) {
+                    message = getResources().getString(R.string.cannotconnectinternate);
+                } else if (volleyError instanceof TimeoutError) {
+                    message = getResources().getString(R.string.connectiontimeout);
+                }
+                if (message != null) {
+
+                    Toast.makeText(CheckoutActivityJava.this, message, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(CheckoutActivityJava.this, getResources().getString(R.string.anerroroccured), Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> param = new HashMap<>();
+
+                param.put("user_id", PrefManager.getUserId(CheckoutActivityJava.this));
+                param.put("pot_id",pot_id);
+                param.put("amount",amount);
+                param.put("striperesponse",succ);
+                param.put("paymentDate",date);
+
+
+
+
+                return param;
+            }
+        };
+
+        MySingleton.getInstance(CheckoutActivityJava.this).addToRequestQueue(stringRequest);
     }
 }

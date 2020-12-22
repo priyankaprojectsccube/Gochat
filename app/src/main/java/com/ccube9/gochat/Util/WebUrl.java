@@ -68,6 +68,7 @@ public class WebUrl {
     public static final String Challangeaddedbyme= Web_url+"get_challenge_by_user";
     public static final String Acceptedchallangebyuser= Web_url +"accepted_challenges_by_user";
     public static final String ChallangeList= Web_url +"get_challenge_list";//
+    public static final String create_striperesponse = Web_url+"create_striperesponse";
     public static final String AcceptedChallengesubcategory=Web_url+"accepted_challenge_category";
     public static final String ChallengeDetails=Web_url+"get_challenge_details";
     public static final String myChallengeDetails= Web_url+"get_my_challenge_details";

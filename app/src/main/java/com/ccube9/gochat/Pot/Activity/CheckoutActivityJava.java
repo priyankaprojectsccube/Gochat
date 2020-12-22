@@ -19,7 +19,19 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
+import com.android.volley.Request;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.ccube9.gochat.R;
+import com.ccube9.gochat.Util.MySingleton;
+import com.ccube9.gochat.Util.PrefManager;
+import com.ccube9.gochat.Util.TransparentProgressDialog;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -31,9 +43,13 @@ import com.stripe.android.model.PaymentIntent;
 import com.stripe.android.model.PaymentMethodCreateParams;
 import com.stripe.android.view.CardInputWidget;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Type;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -41,20 +57,12 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class CheckoutActivityJava extends AppCompatActivity {
-    /**
-     *
-     * This example collects card payments, implementing the guide here: https://stripe.com/docs/payments/accept-a-payment#android
-     *
-     * To run this app, follow the steps here: https://github.com/stripe-samples/accept-a-card-payment#how-to-run-locally
-     */
-    // 10.0.2.2 is the Android emulator's alias to localhost
-    private static final String BACKEND_URL = "https://my-stripe-app-backend.herokuapp.com/";
-//http://10.0.2.2:4242/
+
+    private TransparentProgressDialog pd;
     private OkHttpClient httpClient = new OkHttpClient();
     private String paymentIntentClientSecret,pot_id,amount;
     private Stripe stripe;
@@ -81,7 +89,7 @@ Log.d("intentvalues",pot_id+" "+amount);
 
         texttitle = findViewById(R.id.texttitle);
         iv_back = findViewById(R.id.iv_back);
-
+        pd = new TransparentProgressDialog(this, R.drawable.ic_loader_image);
         texttitle.setText("Payment");
         iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,21 +104,21 @@ Log.d("intentvalues",pot_id+" "+amount);
 
     private void startCheckout() {
         // Create a PaymentIntent by calling the sample server's /create-payment-intent endpoint.
-        MediaType mediaType = MediaType.get("application/json; charset=utf-8");
-        String json = "{"
-                + "\"currency\":\"usd\","
-                + "\"items\":["
-                + "{\"id\":\"photo_subscription\"}"
-                + "]"
-                + "}";
-        RequestBody body = RequestBody.create(json, mediaType);
-        Request request = new Request.Builder()
-                .url(BACKEND_URL)// + "create-payment-intent"
-                .post(body)
-                .build();
-        httpClient.newCall(request)
-                .enqueue(new PayCallback(this));
-
+//        MediaType mediaType = MediaType.get("application/json; charset=utf-8");
+//        String json = "{"
+//                + "\"currency\":\"usd\","
+//                + "\"items\":["
+//                + "{\"id\":\"photo_subscription\"}"
+//                + "]"
+//                + "}";
+//        RequestBody body = RequestBody.create(json, mediaType);
+//        Request request = new Request.Builder()
+//                .url(BACKEND_URL)// + "create-payment-intent"
+//                .post(body)
+//                .build();
+//        httpClient.newCall(request)
+//                .enqueue(new PayCallback(this));
+callapi();
         // Hook up the pay button to the card widget and stripe instance
         Button payButton = findViewById(R.id.payButton);
         payButton.setOnClickListener((View view) -> {
@@ -122,6 +130,88 @@ Log.d("intentvalues",pot_id+" "+amount);
                 stripe.confirmPayment(this, confirmParams);
             }
         });
+    }
+
+    private void callapi() {
+        pd.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://cube9projects.co.in/gochat/app/payment/Stripe_payment/", new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                pd.dismiss();
+
+                Log.d("Stripe_payment", response);
+
+                try {
+
+                    JSONObject jsonObject = new JSONObject(response);
+
+                    String stripePublishableKey = jsonObject.getString("publishableKey");
+                    paymentIntentClientSecret = jsonObject.getString("clientSecret");
+                    Log.d("ClientSecret",paymentIntentClientSecret);
+                    // Configure the SDK with your Stripe publishable key so that it can make requests to the Stripe API
+                    stripe = new Stripe(
+                            getApplicationContext(),
+                            Objects.requireNonNull(stripePublishableKey)
+                    );
+//                    if (jsonObject.getString("status").equals("1")) {
+//
+//
+//
+//
+//                    }else{
+//                        Toast.makeText(CheckoutActivityJava.this,"Something went wrong",Toast.LENGTH_SHORT).show();
+//                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                pd.dismiss();
+                Log.d("Stripe_payment", volleyError.toString());
+                String message = null;
+                if (volleyError instanceof NetworkError) {
+                    message = getResources().getString(R.string.cannotconnectinternate);
+                } else if (volleyError instanceof ServerError) {
+                    message = getResources().getString(R.string.servernotfound);
+                } else if (volleyError instanceof AuthFailureError) {
+                    message = getResources().getString(R.string.loginagain);
+                } else if (volleyError instanceof ParseError) {
+                    message = getResources().getString(R.string.tryagain);
+                } else if (volleyError instanceof NoConnectionError) {
+                    message = getResources().getString(R.string.cannotconnectinternate);
+                } else if (volleyError instanceof TimeoutError) {
+                    message = getResources().getString(R.string.connectiontimeout);
+                }
+                if (message != null) {
+
+                    Toast.makeText(CheckoutActivityJava.this, message, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(CheckoutActivityJava.this, getResources().getString(R.string.anerroroccured), Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> param = new HashMap<>();
+
+                param.put("items", amount);
+
+Log.d("checkamt",amount);
+
+                return param;
+            }
+        };
+
+        MySingleton.getInstance(CheckoutActivityJava.this).addToRequestQueue(stringRequest);
     }
 
     private void displayAlert(@NonNull String title,
@@ -213,7 +303,7 @@ Log.d("intentvalues",pot_id+" "+amount);
         }
     }
 
-    private static final class PaymentResultCallback
+    private final class PaymentResultCallback
             implements ApiResultCallback<PaymentIntentResult> {
         @NonNull private final WeakReference<CheckoutActivityJava> activityRef;
 
@@ -233,18 +323,23 @@ Log.d("intentvalues",pot_id+" "+amount);
             if (status == PaymentIntent.Status.Succeeded) {
                 // Payment completed successfully
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                activity.displayAlert(
-                        "Payment completed",
-                        gson.toJson(paymentIntent),
-                        true
-                );
+//                activity.displayAlert(
+//                        "Payment completed",
+//                        gson.toJson(paymentIntent),
+//                        true
+//                );
+
+                Toast.makeText(CheckoutActivityJava.this, "Payment Success", Toast.LENGTH_SHORT).show();
+                String succ = gson.toJson(paymentIntent);
+                Log.d("paymentsuc",succ);
             } else if (status == PaymentIntent.Status.RequiresPaymentMethod) {
                 // Payment failed – allow retrying using a different payment method
-                activity.displayAlert(
-                        "Payment failed",
-                        Objects.requireNonNull(paymentIntent.getLastPaymentError()).getMessage(),
-                        false
-                );
+//                activity.displayAlert(
+//                        "Payment failed",
+//                        Objects.requireNonNull(paymentIntent.getLastPaymentError()).getMessage(),
+//                        false
+//                );
+                Toast.makeText(CheckoutActivityJava.this, "Payment Fail", Toast.LENGTH_SHORT).show();
             }
         }
 

@@ -136,9 +136,9 @@ int donationvalue = Integer.parseInt(et_donationvalue.getText().toString());
                             String result = new String(response.data);
                             JSONObject jsonObject = new JSONObject(result);
                             if (jsonObject.getString("status").equals("1")) {
-                                Intent intent = new Intent(Set_Pot_Value.this,PotList.class);
-                                intent.putExtra("pot_id",pot_id);
-                                Log.d("Pot_id",pot_id);
+                                Intent intent = new Intent(Set_Pot_Value.this,PotActivity.class);
+//                                intent.putExtra("pot_id",pot_id);
+//                                Log.d("Pot_id",pot_id);
                                 startActivity(intent);
 //Toast.makeText(Create_Pot_Challenge.this,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
                             }else{

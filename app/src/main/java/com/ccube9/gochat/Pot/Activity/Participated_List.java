@@ -116,7 +116,7 @@ public class Participated_List extends AppCompatActivity {
                             participatedList.setFirst_name(jsonObject1.getString("first_name").concat(jsonObject1.getString("last_name")));
                             participatedList.setProfile_image(jsonObject1.getString("profile_image"));
                             participatedList.setAmount(jsonObject1.getString("amount"));
-                            participatedList.setType_of_currency(jsonObject1.getString("Type_of_currency"));
+                          //  participatedList.setType_of_currency(jsonObject1.getString("Type_of_currency"));
 
                             participatedListArrayList.add(participatedList);
 

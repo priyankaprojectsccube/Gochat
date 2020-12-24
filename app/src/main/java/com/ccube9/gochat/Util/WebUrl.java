@@ -54,7 +54,7 @@ public class WebUrl {
     public static final String get_my_album_list = Web_url+"get_my_album_list";
     public static final String close_my_pot = Web_url+"close_my_pot";
     public static final String send_donation_request_notification = Web_url+"send_donation_request_notification";
-    public static final String pot_participated_list = Web_url+"pot_participated_list";
+    public static final String pot_participated_list = Web_url+"pot_participated_list_new";//pot_participated_list
     public static final String delete_album =Web_url+"delete_album";
     public static final String remove_from_fav= Web_url +"delete_favourite_challenge";
     public static final String Create_password= Web_url +"set_password_mobile"; //change_password_mobile

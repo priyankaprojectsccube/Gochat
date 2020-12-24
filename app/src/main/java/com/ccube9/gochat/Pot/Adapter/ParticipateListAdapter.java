@@ -116,7 +116,7 @@ public class ParticipateListAdapter extends RecyclerView.Adapter<ParticipateList
 
 
         holder.username.setText(participatedLists.get(position).getFirst_name());
-        holder.amount.setText(participatedLists.get(position).getAmount()+" "+participatedLists.get(position).getType_of_currency());
+        holder.amount.setText(participatedLists.get(position).getAmount()+" "+"€");
 
 
 

@@ -89,47 +89,58 @@ public class Set_Pot_Value extends AppCompatActivity {
         setpotvalue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Validation validation=new Validation();
+                if(et_potvalue.getText().toString().isEmpty()  ||  et_potvalue.getText().toString().equals("")){
+                    Toast.makeText(Set_Pot_Value.this,"Pot value  should not empty",Toast.LENGTH_SHORT).show();
 
-                if(et_donationvalue.getText().toString() != null  ||  !et_donationvalue.getText().toString().equals("")){
-                    if(et_potvalue.getText().toString() != null || !et_potvalue.getText().toString().equals("")){
+                }else{
+
+
+                    if(et_donationvalue.getText().toString().isEmpty() || et_donationvalue.getText().toString().equals("")  )
+                    {
+                        Toast.makeText(Set_Pot_Value.this,"Donation value should not empty",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+
+
                         potvalue= Integer.parseInt(et_potvalue.getText().toString());
                         donationvalue = Integer.parseInt(et_donationvalue.getText().toString());
 
-                    }
-                }else{
-                    Toast.makeText(Set_Pot_Value.this,"Pot value and Donation value should not empty",Toast.LENGTH_SHORT).show();
-                }
 
-                Validation validation=new Validation();
+                        if (!validation.edttxtvalidation(et_potvalue,Set_Pot_Value.this)){
 
-
-
-
-                if (!validation.edttxtvalidation(et_potvalue,Set_Pot_Value.this)){
-
-                }
-                else if (!validation.edttxtvalidation(et_donationvalue,Set_Pot_Value.this)){
-
-                }else if(donationvalue > potvalue){
-                    Toast.makeText(Set_Pot_Value.this,"Pot value should be greater than donation value",Toast.LENGTH_SHORT).show();
-                }else if(potvalue >= 0){
-                    Toast.makeText(Set_Pot_Value.this,"Pot value should be greater than 0",Toast.LENGTH_SHORT).show();
-                }else if(donationvalue >=0){
-                    Toast.makeText(Set_Pot_Value.this,"Donation value should be greater than 0",Toast.LENGTH_SHORT).show();
-                }
-
-                else {
-                    if(et_donationvalue.getText().toString() != null  ||  !et_donationvalue.getText().toString().equals("")){
-                        if(et_potvalue.getText().toString() != null || !et_potvalue.getText().toString().equals("")){
-                            potvalue= Integer.parseInt(et_potvalue.getText().toString());
-                            donationvalue = Integer.parseInt(et_donationvalue.getText().toString());
-                            callapi();
                         }
-                    }else{
-                        Toast.makeText(Set_Pot_Value.this,"Pot value and Donation value should not empty",Toast.LENGTH_SHORT).show();
+                        else if (!validation.edttxtvalidation(et_donationvalue,Set_Pot_Value.this)){
+
+                        }else if(donationvalue > potvalue){
+                            Toast.makeText(Set_Pot_Value.this,"Pot value should be greater than donation value",Toast.LENGTH_SHORT).show();
+                        }else if(potvalue >= 0){
+                            Toast.makeText(Set_Pot_Value.this,"Pot value should be greater than 0",Toast.LENGTH_SHORT).show();
+                        }else if(donationvalue >=0){
+                            Toast.makeText(Set_Pot_Value.this,"Donation value should be greater than 0",Toast.LENGTH_SHORT).show();
+                        }
+
+                        else {
+                            if(et_donationvalue.getText().toString() != null  ||  !et_donationvalue.getText().toString().equals("")){
+                                if(et_potvalue.getText().toString() != null || !et_potvalue.getText().toString().equals("")){
+                                    potvalue= Integer.parseInt(et_potvalue.getText().toString());
+                                    donationvalue = Integer.parseInt(et_donationvalue.getText().toString());
+                                    callapi();
+                                }
+                            }else{
+                                Toast.makeText(Set_Pot_Value.this,"Pot value and Donation value should not empty",Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
                     }
 
                 }
+
+
+
+
+
+
             }
         });
     }

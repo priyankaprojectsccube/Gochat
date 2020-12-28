@@ -114,9 +114,11 @@ public class Set_Pot_Value extends AppCompatActivity {
 
                         }else if(donationvalue > potvalue){
                             Toast.makeText(Set_Pot_Value.this,"Pot value should be greater than donation value",Toast.LENGTH_SHORT).show();
-                        }else if(potvalue >= 0){
+                        }
+                        else if(potvalue == 0){
                             Toast.makeText(Set_Pot_Value.this,"Pot value should be greater than 0",Toast.LENGTH_SHORT).show();
-                        }else if(donationvalue >=0){
+                        }
+                        else if(donationvalue == 0){
                             Toast.makeText(Set_Pot_Value.this,"Donation value should be greater than 0",Toast.LENGTH_SHORT).show();
                         }
 

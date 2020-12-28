@@ -47,6 +47,7 @@ public class Set_Pot_Value extends AppCompatActivity {
     Button setpotvalue;
     String pot_id;
     EditText et_potvalue,et_donationvalue;
+    int potvalue = 0,donationvalue =0;
     private TransparentProgressDialog pd;
 
     @Override
@@ -79,6 +80,7 @@ public class Set_Pot_Value extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Set_Pot_Value.this, Create_Pot_Challenge_3.class);
+                intent.putExtra("pot_id",pot_id);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
@@ -88,8 +90,7 @@ public class Set_Pot_Value extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Validation validation=new Validation();
-int potvalue= Integer.parseInt(et_potvalue.getText().toString());
-int donationvalue = Integer.parseInt(et_donationvalue.getText().toString());
+
 
 
 
@@ -107,7 +108,16 @@ int donationvalue = Integer.parseInt(et_donationvalue.getText().toString());
                 }
 
                 else {
-                    callapi();
+                    if(et_donationvalue.getText().toString() != null  ||  !et_donationvalue.getText().toString().equals("")){
+                        if(et_potvalue.getText().toString() != null || !et_potvalue.getText().toString().equals("")){
+                            potvalue= Integer.parseInt(et_potvalue.getText().toString());
+                            donationvalue = Integer.parseInt(et_donationvalue.getText().toString());
+                            callapi();
+                        }
+                    }else{
+                        Toast.makeText(Set_Pot_Value.this,"Pot value and Donation value should not empty",Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });

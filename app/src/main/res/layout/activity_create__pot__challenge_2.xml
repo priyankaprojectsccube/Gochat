@@ -155,7 +155,7 @@
                     android:id="@+id/et_abtpot"
                     android:textSize="14sp"
                     android:inputType="text"
-                    android:maxLength="10"
+
                     android:padding="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -180,7 +180,7 @@
                     android:id="@+id/et_woe"
                     android:textSize="14sp"
                     android:inputType="text"
-                    android:maxLength="10"
+
                     android:padding="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

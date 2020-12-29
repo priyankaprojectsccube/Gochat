@@ -22,6 +22,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -136,16 +137,17 @@ public class Create_Pot_Challenge_3 extends AppCompatActivity implements Spinner
 
 
                 Validation validation = new Validation();
- if(imagearr.size()<1){
-                    Toast.makeText(Create_Pot_Challenge_3.this, "Please select atleast one image", Toast.LENGTH_SHORT).show();
-                }
 
-                else if(spinnerlng.getSelectedItem().equals("Select Language")){
+
+                if(spinnerlng.getSelectedItem().equals("Select Language")){
                     Toast.makeText(Create_Pot_Challenge_3.this, "Please select language", Toast.LENGTH_SHORT).show();
                 }
  else if(spinnerdoc.getSelectedItem().equals("Select Document")){
      Toast.makeText(Create_Pot_Challenge_3.this, "Please select document", Toast.LENGTH_SHORT).show();
  }
+              else  if(imagearr.size()<1){
+                    Toast.makeText(Create_Pot_Challenge_3.this, "Please select atleast one image", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     callapi();
                 }

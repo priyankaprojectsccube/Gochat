@@ -25,6 +25,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -108,7 +109,7 @@ public class Pot_Challenge_Association extends AppCompatActivity implements Spin
             pot_id = getIntent().getStringExtra("pot_id");
         }
        Log.d("pot_id",pot_id) ;
-
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         Window window = this.getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorofwhite));
 
@@ -214,24 +215,27 @@ if(imagearr.size() == 0 ){
 
                 Validation validation = new Validation();
 
-                if (!validation.edttxtvalidation(et_entertitle, Pot_Challenge_Association.this)) {
+                if(spinner.getSelectedItem().equals("Select Category")){
+                    Toast.makeText(Pot_Challenge_Association.this, "Please select category", Toast.LENGTH_SHORT).show();
+                }
+              else  if (!validation.edttxtvalidation(et_entertitle, Pot_Challenge_Association.this)) {
 
                 } else if (!validation.edttxtvalidation(et_shortdec, Pot_Challenge_Association.this)) {
 
                 } else if (!validation.edttxtvalidation(et_abtpot, Pot_Challenge_Association.this)) {
 
-                } else if (!validation.edttxtvalidation(dobname_editText, Pot_Challenge_Association.this)) {
-
                 }
                 else if(imagearr.size()<1){
                     Toast.makeText(Pot_Challenge_Association.this, "Please select atleast one image", Toast.LENGTH_SHORT).show();
                 }
+              else if (!validation.edttxtvalidation(dobname_editText, Pot_Challenge_Association.this)) {
+
+                }
+
                 else if(publishradioButton==null){
                     Toast.makeText(Pot_Challenge_Association.this, "Are you creating your pot?", Toast.LENGTH_SHORT).show();
                 }
-                else if(spinner.getSelectedItem().equals("Select Category")){
-                    Toast.makeText(Pot_Challenge_Association.this, "Please select category", Toast.LENGTH_SHORT).show();
-                }
+
 
                 else {
                     callapi();

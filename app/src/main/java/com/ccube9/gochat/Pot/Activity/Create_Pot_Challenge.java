@@ -106,28 +106,29 @@ public class Create_Pot_Challenge extends AppCompatActivity {
                 Validation validation=new Validation();
 
 
-                 if (gender.equals("")){
-                     Toast.makeText(Create_Pot_Challenge.this, getResources().getString(R.string.pleaseselectgender), Toast.LENGTH_SHORT).show();
 
-                }
 
-                else if (!validation.edttxtvalidation(et_firstname,textinputfirstname,Create_Pot_Challenge.this)){
+                 if (!validation.edttxtvalidation(et_firstname,textinputfirstname,Create_Pot_Challenge.this)){
 
                 }
                 else if (!validation.edttxtvalidation(et_lastname,textinputlastname,Create_Pot_Challenge.this)){
-
-                }
-                else if (!validation.edttxtvalidation(dobname_editText,txtInputdob,Create_Pot_Challenge.this)){
 
                 }
 
                  else if (!validation.edttxtvalidation(et_middlename,textinputmiddlename,Create_Pot_Challenge.this)){
 
                  }
+                 else if (!validation.edttxtvalidation(dobname_editText,txtInputdob,Create_Pot_Challenge.this)){
+
+                 }
+                 else if (gender.equals("")){
+                    Toast.makeText(Create_Pot_Challenge.this, getResources().getString(R.string.pleaseselectgender), Toast.LENGTH_SHORT).show();
+
+                }
                  else if (!validation.edttxtvalidation(et_country,textinputcountry,Create_Pot_Challenge.this)){
 
                  }
-                    else {
+                 else {
                         callapi();
                  }
             }

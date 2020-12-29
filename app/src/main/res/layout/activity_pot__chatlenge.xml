@@ -80,6 +80,7 @@
 
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/closepot"
                 android:textSize="14sp"
              android:gravity="center"

@@ -51,7 +51,7 @@ import static com.ccube9.gochat.Util.WebUrl.Base_url;
 public class Pot_Chatlenge extends AppCompatActivity {
     ImageView iv_back,imageView;
     TextView texttitle,closepot,potname,des,invite,share,raiseof,raisedby,about,contribute;
-    String pot_id,minimum_donation,sumamt;
+    String pot_id,minimum_donation,sumamt,strshareurl;
     private TransparentProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +114,22 @@ public class Pot_Chatlenge extends AppCompatActivity {
             }
         });
 
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+if(strshareurl != null ){
+
+    Intent intent = new Intent();
+    intent.setAction(Intent.ACTION_SEND);
+    intent.putExtra(Intent.EXTRA_SUBJECT, "Try This");
+    intent.putExtra(Intent.EXTRA_TEXT, strshareurl);
+    intent.setType("text/plain");
+    startActivity(intent);
+}else{
+    Toast.makeText(Pot_Chatlenge.this,"Share link not available",Toast.LENGTH_SHORT).show();
+}
+            }
+        });
         invite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -296,11 +312,17 @@ pd.show();
                         JSONObject jsonObject1 = jsonObject.getJSONArray("pot_details").getJSONObject(0);
 
 
-
+                           if(jsonObject1.getString("user_id").equals(PrefManager.getUserId(Pot_Chatlenge.this))){
+                               closepot.setVisibility(View.VISIBLE);
+                           }else{
+                               closepot.setVisibility(View.GONE);
+                           }
+                           strshareurl = jsonObject.getString("weburl");
                         potname.setText(jsonObject1.getString("first_name")+" "+jsonObject1.getString("last_name"));
                         des.setText(jsonObject1.getString("description"));
 
                         about.setText(jsonObject1.getString("about_pot"));
+
 
 
 if(jsonObject1.getString("banner_for_association") != null){

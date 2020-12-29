@@ -103,6 +103,7 @@ public class RecentPotsAdapter extends RecyclerView.Adapter<RecentPotsAdapter.My
                 String pot_id =  potListArrayList.get(position).getId();
                 Intent intent = new Intent(context, Pot_Chatlenge.class);
                 intent.putExtra("pot_id",pot_id);
+
                 Log.d("Pot_id",pot_id);
                 context.startActivity(intent);
             }

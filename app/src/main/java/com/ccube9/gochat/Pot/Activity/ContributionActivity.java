@@ -89,26 +89,31 @@ public class ContributionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Validation validation=new Validation();
-                int contriamt= Integer.parseInt(textinputcontriamount.getText().toString());
+                if(textinputcontriamount.getText().toString().isEmpty()  ||  textinputcontriamount.getText().toString().equals("")){
+                    Toast.makeText(ContributionActivity.this,"Amount should be greater than 100",Toast.LENGTH_SHORT).show();
+
+                }else{
+                    int contriamt= Integer.parseInt(textinputcontriamount.getText().toString());
 
 
 
 
-                if (!validation.edttxtvalidation(textinputcontriamount,ContributionActivity.this)){
+//                    if (!validation.edttxtvalidation(textinputcontriamount,ContributionActivity.this)){
+//
+//                    }
+//                    else
+                        if(contriamt < 100){
+                        Toast.makeText(ContributionActivity.this,"Amount should be greater than 100",Toast.LENGTH_SHORT).show();
+                    }
 
-                }
-              else if(contriamt <= 0){
-                    Toast.makeText(ContributionActivity.this,"Amount should be greater than 0",Toast.LENGTH_SHORT).show();
-                }
+                    else {
+                        // callapi();
 
-                else {
-                   // callapi();
-
-                    Intent intent = new Intent(ContributionActivity.this, CheckoutActivityJava.class); //WebViewActivity
-                    intent.putExtra("pot_id",pot_id);
-                    intent.putExtra("amount",textinputcontriamount.getText().toString());
-                    Log.d("amount",textinputcontriamount.getText().toString());
-                    startActivity(intent);
+                        Intent intent = new Intent(ContributionActivity.this, CheckoutActivityJava.class); //WebViewActivity
+                        intent.putExtra("pot_id",pot_id);
+                        intent.putExtra("amount",textinputcontriamount.getText().toString());
+                        Log.d("amount",textinputcontriamount.getText().toString());
+                        startActivity(intent);
 
 //                    Map<String, Object> card = new HashMap<>();
 //                    card.put("number", "4242424242424242");
@@ -119,7 +124,9 @@ public class ContributionActivity extends AppCompatActivity {
 //                    params.put("card", card);
 //
 //                    Token token = Token.create(params);
+                    }
                 }
+
             }
         });
     }

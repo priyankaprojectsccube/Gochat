@@ -22,6 +22,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -102,7 +103,7 @@ public class Create_Pot_Challenge_2 extends AppCompatActivity implements Spinner
             pot_id = getIntent().getStringExtra("pot_id");
         }
         Log.d("pot_id",pot_id) ;
-
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         Window window = this.getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorofwhite));
 
@@ -212,28 +213,32 @@ public class Create_Pot_Challenge_2 extends AppCompatActivity implements Spinner
 
 
                 Validation validation = new Validation();
-
-                if (!validation.edttxtvalidation(et_nameofassociation, Create_Pot_Challenge_2.this)) {
-
-                } else if (!validation.edttxtvalidation(et_abtpot, Create_Pot_Challenge_2.this)) {
-
-                } else if (!validation.edttxtvalidation(et_bankaccount, Create_Pot_Challenge_2.this)) {
-
-                }else if (!validation.edttxtvalidation(et_woe, Create_Pot_Challenge_2.this)) {
+ if(spinner.getSelectedItem().equals("Select pot to donate")){
+                    Toast.makeText(Create_Pot_Challenge_2.this, "Please select pot", Toast.LENGTH_SHORT).show();
+                }
+ else  if (!validation.edttxtvalidation(et_nameofassociation, Create_Pot_Challenge_2.this)) {
 
                 }
-                else if(imagearr2.size()<1){
-                    Toast.makeText(Create_Pot_Challenge_2.this, "Please select atleast one banner", Toast.LENGTH_SHORT).show();
+ else if(imagearr2.size()<1){
+     Toast.makeText(Create_Pot_Challenge_2.this, "Please select atleast one banner", Toast.LENGTH_SHORT).show();
+ }
+ else if(imagearr.size()<1){
+     Toast.makeText(Create_Pot_Challenge_2.this, "Please select atleast one logo", Toast.LENGTH_SHORT).show();
+ }
+ else if (!validation.edttxtvalidation(et_abtpot, Create_Pot_Challenge_2.this)) {
+
                 }
-                else if(imagearr.size()<1){
-                    Toast.makeText(Create_Pot_Challenge_2.this, "Please select atleast one logo", Toast.LENGTH_SHORT).show();
+
+ else if (!validation.edttxtvalidation(et_woe, Create_Pot_Challenge_2.this)) {
+
                 }
+ else if (!validation.edttxtvalidation(et_bankaccount, Create_Pot_Challenge_2.this)) {
+
+ }
                 else if(publishradioButton==null){
                     Toast.makeText(Create_Pot_Challenge_2.this, "Subcribe Newsletter?", Toast.LENGTH_SHORT).show();
                 }
-                else if(spinner.getSelectedItem().equals("Select pot to donate")){
-                    Toast.makeText(Create_Pot_Challenge_2.this, "Please select pot", Toast.LENGTH_SHORT).show();
-                }
+
 
                 else {
                     callapi();

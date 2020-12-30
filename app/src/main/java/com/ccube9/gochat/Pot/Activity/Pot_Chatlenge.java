@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +51,7 @@ import static com.ccube9.gochat.Util.WebUrl.Base_url;
 
 public class Pot_Chatlenge extends AppCompatActivity {
     ImageView iv_back,imageView;
+    SeekBar seekBar;
     TextView texttitle,closepot,potname,des,invite,share,raiseof,raisedby,about,contribute;
     String pot_id,minimum_donation,sumamt,strshareurl;
     private TransparentProgressDialog pd;
@@ -73,6 +75,7 @@ public class Pot_Chatlenge extends AppCompatActivity {
 
         pd = new TransparentProgressDialog(this, R.drawable.ic_loader_image);
 
+        seekBar = findViewById(R.id.seekbar);
         contribute = findViewById(R.id.contribute);
         about = findViewById(R.id.about);
         raisedby = findViewById(R.id.raisedby);
@@ -317,6 +320,13 @@ pd.show();
                            }else{
                                closepot.setVisibility(View.GONE);
                            }
+                           if(jsonObject1.getString("status").equals("0")){
+                               closepot.setVisibility(View.VISIBLE);
+                               contribute.setVisibility(View.VISIBLE);
+                           }else{
+                               closepot.setVisibility(View.GONE);
+                               contribute.setVisibility(View.GONE);
+                           }
                            strshareurl = jsonObject.getString("weburl");
                         potname.setText(jsonObject1.getString("first_name")+" "+jsonObject1.getString("last_name"));
                         des.setText(jsonObject1.getString("description"));
@@ -419,11 +429,17 @@ callanotherapi();
                             for (int j = 0; j < jsonArray2.length(); j++) {
 
                                 JSONObject jsonObject3 = jsonArray2.getJSONObject(j);
-                                if (jsonObject3.getString("sum(amount)") != null || !jsonObject3.getString("sum(amount)").isEmpty()){
-                                    sumamt = jsonObject3.getString("sum(amount)");
+                                if(jsonObject3 != null){
+                                    if (jsonObject3.getString("sum(amount)") != null || !jsonObject3.getString("sum(amount)").isEmpty()){
+                                        sumamt = jsonObject3.getString("sum(amount)");
+                                        seekBar.setProgress(Integer.parseInt(sumamt));
+                                    }else{
+                                        sumamt = "0";
+                                    }
                                 }else{
                                     sumamt = "0";
                                 }
+
 
                              //   raiseof.setText(jsonObject3.getString("sum(amount)")+" €"+" Raise of "+" €");
 

@@ -185,7 +185,8 @@ android:gravity="center"
 
 
             <SeekBar
-
+                android:id="@+id/seekbar"
+                android:max="100000"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="30dp"
@@ -225,6 +226,7 @@ android:gravity="center"
                 android:layout_gravity="center"
                 android:textColor="@color/quantum_black_text"
                 android:text="Contribute"
+                android:visibility="gone"
                 android:padding="10dp"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content">

@@ -486,7 +486,6 @@ public class Create_Pot_Challenge_2 extends AppCompatActivity implements Spinner
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
 
 
 
@@ -606,4 +605,6 @@ public class Create_Pot_Challenge_2 extends AppCompatActivity implements Spinner
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+
 }

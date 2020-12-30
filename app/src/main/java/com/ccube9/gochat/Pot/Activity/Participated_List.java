@@ -184,7 +184,8 @@ public class Participated_List extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    public void onBackPressed()
+    {
+
     }
 }

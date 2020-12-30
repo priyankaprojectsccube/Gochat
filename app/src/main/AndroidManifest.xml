@@ -22,7 +22,6 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".Pot.Activity.WebViewActivity" />
         <activity
             android:name=".Pot.Activity.ProfileInstaActivity"
             android:theme="@style/AppTheme" />

@@ -148,80 +148,14 @@ public class ContributionActivity extends AppCompatActivity {
 
     }
 
-    private void callapi() {
-
-        pd.show();
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://api.stripe.com/", new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                pd.dismiss();
-
-                Log.d("get_payment_getway_url", response);
-
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    if (jsonObject.getString("status").equals("1")) {
-
-                        String weburl = jsonObject.getString("getway_url");
-
-                        Intent intent = new Intent(ContributionActivity.this, WebViewActivity.class); //WebViewActivity
-                        intent.putExtra("weburl",weburl);
-                        startActivity(intent);
-
-//Toast.makeText(Create_Pot_Challenge.this,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(ContributionActivity.this,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
-                    }
 
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-                pd.dismiss();
-                Log.d("get_payment_getway_url", volleyError.toString());
-                String message = null;
-                if (volleyError instanceof NetworkError) {
-                    message = getResources().getString(R.string.cannotconnectinternate);
-                } else if (volleyError instanceof ServerError) {
-                    message = getResources().getString(R.string.servernotfound);
-                } else if (volleyError instanceof AuthFailureError) {
-                    message = getResources().getString(R.string.loginagain);
-                } else if (volleyError instanceof ParseError) {
-                    message = getResources().getString(R.string.tryagain);
-                } else if (volleyError instanceof NoConnectionError) {
-                    message = getResources().getString(R.string.cannotconnectinternate);
-                } else if (volleyError instanceof TimeoutError) {
-                    message = getResources().getString(R.string.connectiontimeout);
-                }
-                if (message != null) {
-
-                    Toast.makeText(ContributionActivity.this, message, Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(ContributionActivity.this, getResources().getString(R.string.anerroroccured), Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        }) {
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> param = new HashMap<>();
-
-                param.put("user_id", PrefManager.getUserId(ContributionActivity.this));
+    @Override
+    public void onBackPressed() {
 
 
 
-                return param;
-            }
-        };
 
-        MySingleton.getInstance(ContributionActivity.this).addToRequestQueue(stringRequest);
     }
+
 }

@@ -151,7 +151,7 @@ public class PotActivity extends AppCompatActivity {
 
                     }
                     else {
-                        Toast.makeText(PotActivity.this,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
+                     //   Toast.makeText(PotActivity.this,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
                     }
                 }
 

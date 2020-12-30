@@ -378,7 +378,7 @@ Log.d("imagegoing","name"+i+".png");
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+
 
 
 

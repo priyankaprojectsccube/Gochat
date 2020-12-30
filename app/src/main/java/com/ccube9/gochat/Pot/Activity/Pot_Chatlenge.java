@@ -415,6 +415,7 @@ callanotherapi();
                             JSONArray jsonArray2 = jsonObject1.getJSONArray("pot_id_sum_amount");
 
 
+
                             for (int j = 0; j < jsonArray2.length(); j++) {
 
                                 JSONObject jsonObject3 = jsonArray2.getJSONObject(j);
@@ -503,6 +504,7 @@ callanotherapi();
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+
+
     }
 }

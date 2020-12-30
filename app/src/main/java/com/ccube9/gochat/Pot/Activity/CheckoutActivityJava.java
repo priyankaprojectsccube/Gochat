@@ -442,4 +442,13 @@ Log.d("checkamt",amount);
 
         MySingleton.getInstance(CheckoutActivityJava.this).addToRequestQueue(stringRequest);
     }
+
+    @Override
+    public void onBackPressed() {
+
+
+
+
+    }
+
 }

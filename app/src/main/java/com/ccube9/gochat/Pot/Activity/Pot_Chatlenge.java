@@ -454,6 +454,7 @@ callanotherapi();
                             minimum_donation = jsonObject1.getString("minimum_donation");
                             peoplecount = jsonObject1.getString("people_count");
                             dayscount = jsonObject1.getString("days_count");
+Log.d("dayscount",dayscount);
                             strpotvalue = jsonObject1.getString("pot_value");
                             int intsumamt = Integer.parseInt(sumamt);
                             int intpotvalue = Integer.parseInt(strpotvalue);
@@ -472,8 +473,14 @@ callanotherapi();
 //                            }else{
                                 raiseof.setText(sumamt+" €"+" Raise of "+strpotvalue+" €");
                          //   }
+if(dayscount.contains("-1")){
+    raisedby.setText("Raised by"+" "+peoplecount+" "+"People in "+"0"+" days");
+}else{
+    raisedby.setText("Raised by"+" "+peoplecount+" "+"People in "+dayscount+" days");
+}
 
-                            raisedby.setText("Raised by"+" "+peoplecount+" "+"People in "+dayscount+" days");
+
+
 
                         }
 

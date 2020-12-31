@@ -2,6 +2,8 @@ package com.ccube9.gochat.Util;
 
 public class ParticipatedList {
     String id;
+    String user_id;
+    String pot_id;
     String profile_image;
     String last_name;
     String first_name;
@@ -14,6 +16,22 @@ public class ParticipatedList {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getPot_id() {
+        return pot_id;
+    }
+
+    public void setPot_id(String pot_id) {
+        this.pot_id = pot_id;
     }
 
     public String getProfile_image() {

@@ -53,11 +53,12 @@ import static com.ccube9.gochat.Util.WebUrl.Base_url;
 public class ProfileInstaActivity extends AppCompatActivity {
     ImageView iv_back;
     TextView texttitle,name,my_accpet_challenges_count,my_pot_count,my_challenges_count;
-    String id;
+    String id,potid;
     CircleImageView profile_image;
     private TransparentProgressDialog pd;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    boolean flag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,9 @@ public class ProfileInstaActivity extends AppCompatActivity {
 
         if (getIntent().hasExtra("id")) {
             id = getIntent().getStringExtra("id");
+        }
+        if (getIntent().hasExtra("fromparti")) {
+            flag = true;
         }
         Log.d("id",id) ;
 
@@ -99,9 +103,18 @@ public class ProfileInstaActivity extends AppCompatActivity {
         iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ProfileInstaActivity.this, PotActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+                if (flag) {
+                    potid = getIntent().getStringExtra("pot_id");
+                    Intent intent = new Intent(ProfileInstaActivity.this, Participated_List.class);
+                    intent.putExtra("pot_id",potid);
+                    startActivity(intent);
+                }else{
+                    Intent intent=new Intent(ProfileInstaActivity.this, PotActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+
+
             }
         });
     }

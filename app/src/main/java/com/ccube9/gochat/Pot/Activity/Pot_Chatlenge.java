@@ -241,7 +241,8 @@ if(strshareurl != null ){
 
                     if (jsonObject.getString("status").equals("1")) {
 
-
+closepot.setVisibility(View.GONE);
+contribute.setVisibility(View.GONE);
 
                         Toast.makeText(Pot_Chatlenge.this,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
 

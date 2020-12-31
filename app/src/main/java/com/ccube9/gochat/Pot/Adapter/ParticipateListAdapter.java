@@ -24,6 +24,7 @@ import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.ccube9.gochat.OnItemClickListener;
+import com.ccube9.gochat.Pot.Activity.ProfileInstaActivity;
 import com.ccube9.gochat.Profile.Adapter.FollowerAdapter;
 import com.ccube9.gochat.Profile.FollowerActivity;
 import com.ccube9.gochat.R;
@@ -118,6 +119,34 @@ public class ParticipateListAdapter extends RecyclerView.Adapter<ParticipateList
         holder.username.setText(participatedLists.get(position).getFirst_name());
         holder.amount.setText(participatedLists.get(position).getAmount()+" "+"€");
 
+
+        holder.username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id =  participatedLists.get(position).getUser_id();
+                String potid = participatedLists.get(position).getPot_id();
+                Intent intent = new Intent(context, ProfileInstaActivity.class);
+                intent.putExtra("id",id);
+                intent.putExtra("fromparti","participate");
+                intent.putExtra("pot_id",potid);
+                Log.d("id",id);
+                context.startActivity(intent);
+            }
+        });
+
+        holder.profile_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String id =  participatedLists.get(position).getUser_id();
+                String potid = participatedLists.get(position).getPot_id();
+                Intent intent = new Intent(context, ProfileInstaActivity.class);
+                intent.putExtra("id",id);
+                intent.putExtra("fromparti","participate");
+                intent.putExtra("pot_id",potid);
+                Log.d("id",id);
+                context.startActivity(intent);
+            }
+        });
 
 
         if(participatedLists.get(position).getProfile_image()!=null) {

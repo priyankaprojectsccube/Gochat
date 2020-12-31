@@ -113,6 +113,8 @@ public class Participated_List extends AppCompatActivity {
 
                             ParticipatedList participatedList = new ParticipatedList();
                             participatedList.setId(jsonObject1.getString("id"));
+                            participatedList.setUser_id(jsonObject1.getString("user_id"));
+                            participatedList.setPot_id(jsonObject1.getString("pot_id"));
                             participatedList.setFirst_name(jsonObject1.getString("first_name").concat(jsonObject1.getString("last_name")));
                             participatedList.setProfile_image(jsonObject1.getString("profile_image"));
                             participatedList.setAmount(jsonObject1.getString("amount"));

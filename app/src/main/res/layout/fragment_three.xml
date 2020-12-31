@@ -1,16 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Challenge.Activity.FavouriteChallengeActivity">
+    android:orientation="vertical"
+>
+
+<!--    <TextView-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="@color/quantum_black_text"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:text="Challenges"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
+
+
         android:id="@+id/recvewthree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+<!--    <TextView-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textColor="@color/quantum_black_text"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:text="Pots"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+
+
+<!--        android:id="@+id/recvewfour"-->
+<!--   -->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="150dp"/>-->
 
 </LinearLayout>

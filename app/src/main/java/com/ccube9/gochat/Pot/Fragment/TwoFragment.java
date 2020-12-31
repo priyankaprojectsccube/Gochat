@@ -174,7 +174,7 @@ public class TwoFragment extends Fragment {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> param = new HashMap<>();
 
-                param.put("user_id", PrefManager.getUserId(getContext()));
+                param.put("user_id", getData);
                 // param.put("language", "1");
 
 

@@ -4,10 +4,12 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -90,6 +92,8 @@ public class Pot_Chatlenge extends AppCompatActivity {
         iv_back = findViewById(R.id.iv_back);
 
         texttitle.setText("Pot Chatlenge");
+
+
         iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -406,6 +410,7 @@ callanotherapi();
     private void callanotherapi() {
         pd.show();
         StringRequest stringRequest=new StringRequest(Request.Method.POST, WebUrl.raise_by_people, new Response.Listener<String>() {
+            @SuppressLint("Range")
             @Override
             public void onResponse(String response) {
                 pd.dismiss();
@@ -433,6 +438,14 @@ callanotherapi();
                                     if (jsonObject3.getString("sum(amount)") != null || !jsonObject3.getString("sum(amount)").isEmpty()){
                                         sumamt = jsonObject3.getString("sum(amount)");
                                         seekBar.setProgress(Integer.parseInt(sumamt));
+//
+//                                        seekBar.setEnabled(false);
+                                        seekBar.setOnTouchListener(new View.OnTouchListener(){
+                                            @Override
+                                            public boolean onTouch(View v, MotionEvent event) {
+                                                return true;
+                                            }
+                                        });
                                     }else{
                                         sumamt = "0";
                                     }

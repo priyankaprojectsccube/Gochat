@@ -55,7 +55,7 @@ public class Pot_Chatlenge extends AppCompatActivity {
     ImageView iv_back,imageView;
     SeekBar seekBar;
     TextView texttitle,closepot,potname,des,invite,share,raiseof,raisedby,about,contribute;
-    String pot_id,minimum_donation,sumamt="0",strshareurl;
+    String pot_id,minimum_donation,sumamt="0",strshareurl,peoplecount,dayscount,strpotvalue;
     private TransparentProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -428,7 +428,7 @@ callanotherapi();
 
 
 
-                            JSONArray jsonArray2 = jsonObject1.getJSONArray("pot_id_sum_amount");
+                            JSONArray jsonArray2 = jsonObject1.getJSONArray("sum_amount");
 
 
 
@@ -438,15 +438,7 @@ callanotherapi();
                                 if(jsonObject3 != null){
                                     if (jsonObject3.getString("sum(amount)") != null || !jsonObject3.getString("sum(amount)").isEmpty()){
                                         sumamt = jsonObject3.getString("sum(amount)");
-                                        seekBar.setProgress(Integer.parseInt(sumamt));
-//
-//                                        seekBar.setEnabled(false);
-                                        seekBar.setOnTouchListener(new View.OnTouchListener(){
-                                            @Override
-                                            public boolean onTouch(View v, MotionEvent event) {
-                                                return true;
-                                            }
-                                        });
+
                                     }else{
                                         sumamt = "0";
                                     }
@@ -460,15 +452,28 @@ callanotherapi();
                             }
 
                             minimum_donation = jsonObject1.getString("minimum_donation");
-//                            minimum_donation
-                            Log.d("sumatmvalue",sumamt);
-                            if(sumamt == null){
-                                raiseof.setText("0 "+" €"+" Raise of "+minimum_donation+" €");
-                            }else{
-                                raiseof.setText(sumamt+" €"+" Raise of "+minimum_donation+" €");
-                            }
+                            peoplecount = jsonObject1.getString("people_count");
+                            dayscount = jsonObject1.getString("days_count");
+                            strpotvalue = jsonObject1.getString("pot_value");
+                            int intsumamt = Integer.parseInt(sumamt);
+                            int intpotvalue = Integer.parseInt(strpotvalue);
+                            seekBar.setMax(intpotvalue);
+                            seekBar.setProgress(intsumamt);
+                            seekBar.setOnTouchListener(new View.OnTouchListener(){
+                                @Override
+                                public boolean onTouch(View v, MotionEvent event) {
+                                    return true;
+                                }
+                            });
 
-                            raisedby.setText("Raised by"+" "+jsonObject1.getString("pot_id_amount_count")+" "+"People in "+jsonObject1.getString("days_count")+" days");
+
+//                            if(sumamt == null){
+//                                raiseof.setText("0 "+" €"+" Raise of "+minimum_donation+" €");
+//                            }else{
+                                raiseof.setText(sumamt+" €"+" Raise of "+strpotvalue+" €");
+                         //   }
+
+                            raisedby.setText("Raised by"+" "+peoplecount+" "+"People in "+dayscount+" days");
 
                         }
 

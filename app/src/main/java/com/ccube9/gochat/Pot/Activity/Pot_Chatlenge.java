@@ -55,7 +55,7 @@ public class Pot_Chatlenge extends AppCompatActivity {
     ImageView iv_back,imageView;
     SeekBar seekBar;
     TextView texttitle,closepot,potname,des,invite,share,raiseof,raisedby,about,contribute;
-    String pot_id,minimum_donation,sumamt,strshareurl;
+    String pot_id,minimum_donation,sumamt="0",strshareurl;
     private TransparentProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -461,7 +461,13 @@ callanotherapi();
 
                             minimum_donation = jsonObject1.getString("minimum_donation");
 //                            minimum_donation
-                            raiseof.setText(sumamt+" €"+" Raise of "+minimum_donation+" €");
+                            Log.d("sumatmvalue",sumamt);
+                            if(sumamt == null){
+                                raiseof.setText("0 "+" €"+" Raise of "+minimum_donation+" €");
+                            }else{
+                                raiseof.setText(sumamt+" €"+" Raise of "+minimum_donation+" €");
+                            }
+
                             raisedby.setText("Raised by"+" "+jsonObject1.getString("pot_id_amount_count")+" "+"People in "+jsonObject1.getString("days_count")+" days");
 
                         }

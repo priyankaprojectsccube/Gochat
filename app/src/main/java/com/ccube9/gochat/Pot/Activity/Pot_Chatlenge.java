@@ -336,18 +336,17 @@ pd.show();
 //                               closepot.setVisibility(View.GONE);
 //                           }
                            if(jsonObject1.getString("status").equals("0")){
+                               contribute.setVisibility(View.VISIBLE);
                                if(jsonObject1.getString("user_id").equals(PrefManager.getUserId(Pot_Chatlenge.this))){
                                closepot.setVisibility(View.VISIBLE);
-                               contribute.setVisibility(View.VISIBLE);
-                           }else{
+                               }else{
                                closepot.setVisibility(View.GONE);
-                               contribute.setVisibility(View.GONE);
-                         }
+                               }
 //                               closepot.setVisibility(View.VISIBLE);
 //                               contribute.setVisibility(View.VISIBLE);
                            }else{
-                               closepot.setVisibility(View.GONE);
                                contribute.setVisibility(View.GONE);
+
                            }
                            strshareurl = jsonObject.getString("weburl");
                         potname.setText(jsonObject1.getString("first_name")+" "+jsonObject1.getString("last_name"));

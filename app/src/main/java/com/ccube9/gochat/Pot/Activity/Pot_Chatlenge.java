@@ -339,8 +339,10 @@ pd.show();
                                contribute.setVisibility(View.VISIBLE);
                                if(jsonObject1.getString("user_id").equals(PrefManager.getUserId(Pot_Chatlenge.this))){
                                closepot.setVisibility(View.VISIBLE);
+                               invite.setVisibility(View.VISIBLE);
                                }else{
                                closepot.setVisibility(View.GONE);
+                                   invite.setVisibility(View.GONE);
                                }
 //                               closepot.setVisibility(View.VISIBLE);
 //                               contribute.setVisibility(View.VISIBLE);

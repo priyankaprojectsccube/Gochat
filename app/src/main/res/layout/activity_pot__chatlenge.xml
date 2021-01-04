@@ -119,7 +119,7 @@ android:gravity="center"
             android:layout_height="30dp">
 
             <TextView
-
+            android:visibility="gone"
                 android:drawablePadding="15dp"
                 android:gravity="center"
                 android:id="@+id/invite"

@@ -30,6 +30,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.asksira.loopingviewpager.LoopingViewPager;
 import com.ccube9.gochat.Challenge.Activity.MyChallengeDetailActivity;
 import com.ccube9.gochat.Challenge.Adapter.PagerImageAdapter;
+import com.ccube9.gochat.Home.Fragment.NotificationActivity;
 import com.ccube9.gochat.Home.HomeActivity;
 import com.ccube9.gochat.R;
 import com.ccube9.gochat.Util.MySingleton;
@@ -57,11 +58,15 @@ public class Pot_Chatlenge extends AppCompatActivity {
     TextView texttitle,closepot,potname,des,invite,share,raiseof,raisedby,about,contribute;
     String pot_id,minimum_donation,sumamt="0",strshareurl,peoplecount,dayscount,strpotvalue;
     private TransparentProgressDialog pd;
+    boolean flag = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pot__chatlenge);
 
+        if (getIntent().hasExtra("gobacknot")) {
+            flag = true;
+        }
         if (getIntent().hasExtra("pot_id")) {
             pot_id = getIntent().getStringExtra("pot_id");
         }
@@ -97,9 +102,14 @@ public class Pot_Chatlenge extends AppCompatActivity {
         iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Pot_Chatlenge.this, PotActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+                if (flag) {
+                    Intent i  = new Intent(Pot_Chatlenge.this, NotificationActivity.class);
+                    startActivity(i);
+                }else {
+                    Intent intent = new Intent(Pot_Chatlenge.this, PotActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
             }
         });
 

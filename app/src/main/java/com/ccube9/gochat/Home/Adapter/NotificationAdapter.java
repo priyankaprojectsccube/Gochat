@@ -126,6 +126,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                                     }
                                     else if (notification.getIntitatiofundgo().equals("1")){
                                         Intent intent = new Intent(context, Pot_Chatlenge.class);
+                                        intent.putExtra("gobacknot","gobacknot");
                                         intent.putExtra("pot_id",notification.getPot_id());
                                         context.startActivity(intent);
                                     }
@@ -174,6 +175,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                     }
                     else if (notification.getIntitatiofundgo().equals("1")){
                         Intent intent = new Intent(context, Pot_Chatlenge.class);
+                        intent.putExtra("gobacknot","gobacknot");
                         intent.putExtra("pot_id",notification.getPot_id());
                         context.startActivity(intent);
                     }

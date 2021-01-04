@@ -141,6 +141,8 @@ public class NotificationActivity extends AppCompatActivity {
                             notification.setRead_status(jsonObject1.getString("read_status"));
                             notification.setRequest_winner(jsonObject1.getString("request_winner"));
                             notification.setMain_challenge_id(jsonObject1.getString("main_challenge_id"));
+                            notification.setPot_id(jsonObject1.getString("pot_id"));
+                            notification.setIntitatiofundgo(jsonObject1.getString("intitatiofundgo"));
 
 
 

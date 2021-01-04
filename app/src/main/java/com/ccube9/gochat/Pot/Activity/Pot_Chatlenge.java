@@ -320,14 +320,21 @@ pd.show();
                         JSONObject jsonObject1 = jsonObject.getJSONArray("pot_details").getJSONObject(0);
 
 
-                           if(jsonObject1.getString("user_id").equals(PrefManager.getUserId(Pot_Chatlenge.this))){
-                               closepot.setVisibility(View.VISIBLE);
-                           }else{
-                               closepot.setVisibility(View.GONE);
-                           }
+//                           if(jsonObject1.getString("user_id").equals(PrefManager.getUserId(Pot_Chatlenge.this))){
+//                               closepot.setVisibility(View.VISIBLE);
+//                           }else{
+//                               closepot.setVisibility(View.GONE);
+//                           }
                            if(jsonObject1.getString("status").equals("0")){
+                               if(jsonObject1.getString("user_id").equals(PrefManager.getUserId(Pot_Chatlenge.this))){
                                closepot.setVisibility(View.VISIBLE);
                                contribute.setVisibility(View.VISIBLE);
+                           }else{
+                               closepot.setVisibility(View.GONE);
+                               contribute.setVisibility(View.GONE);
+                         }
+//                               closepot.setVisibility(View.VISIBLE);
+//                               contribute.setVisibility(View.VISIBLE);
                            }else{
                                closepot.setVisibility(View.GONE);
                                contribute.setVisibility(View.GONE);

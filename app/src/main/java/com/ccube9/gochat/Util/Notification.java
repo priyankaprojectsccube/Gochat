@@ -41,6 +41,24 @@ public class Notification {
     String  read_status;
     String request_winner;
 String main_challenge_id;
+String pot_id;
+String intitatiofundgo;
+
+    public String getPot_id() {
+        return pot_id;
+    }
+
+    public void setPot_id(String pot_id) {
+        this.pot_id = pot_id;
+    }
+
+    public String getIntitatiofundgo() {
+        return intitatiofundgo;
+    }
+
+    public void setIntitatiofundgo(String intitatiofundgo) {
+        this.intitatiofundgo = intitatiofundgo;
+    }
 
     public String getMain_challenge_id() {
         return main_challenge_id;

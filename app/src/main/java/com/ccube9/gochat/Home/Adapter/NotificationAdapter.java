@@ -22,6 +22,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.ccube9.gochat.Home.Fragment.NotificationActivity;
 import com.ccube9.gochat.Home.Fragment.Request_for_winner;
+import com.ccube9.gochat.Pot.Activity.Pot_Chatlenge;
 import com.ccube9.gochat.R;
 import com.ccube9.gochat.Util.Notification;
 import com.ccube9.gochat.Util.POJO;
@@ -118,11 +119,14 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
                                 if(jsonObject.getString("status").equals("1")){
                                     myViewHolder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.colorWhite));
-                                    if(notification.getRequest_winner().equals("0")){
-
-                                    }else if(notification.getRequest_winner().equals("1")){
+                                    if(notification.getRequest_winner().equals("1")){
                                         Intent intent = new Intent(context, Request_for_winner.class);
                                         intent.putExtra("mainchallengeid",notification.getMain_challenge_id());
+                                        context.startActivity(intent);
+                                    }
+                                    else if (notification.getIntitatiofundgo().equals("1")){
+                                        Intent intent = new Intent(context, Pot_Chatlenge.class);
+                                        intent.putExtra("pot_id",notification.getPot_id());
                                         context.startActivity(intent);
                                     }
                                 }
@@ -155,11 +159,22 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
                 }
                 else {
-                    if(notification.getRequest_winner().equals("0")){
+//                    if(notification.getRequest_winner().equals("0")){
+//
+//                    }else if(notification.getRequest_winner().equals("1")){
+//                        Intent intent = new Intent(context, Request_for_winner.class);
+//                        intent.putExtra("mainchallengeid",notification.getMain_challenge_id());
+//                        context.startActivity(intent);
+//                    }
 
-                    }else if(notification.getRequest_winner().equals("1")){
+                    if(notification.getRequest_winner().equals("1")){
                         Intent intent = new Intent(context, Request_for_winner.class);
                         intent.putExtra("mainchallengeid",notification.getMain_challenge_id());
+                        context.startActivity(intent);
+                    }
+                    else if (notification.getIntitatiofundgo().equals("1")){
+                        Intent intent = new Intent(context, Pot_Chatlenge.class);
+                        intent.putExtra("pot_id",notification.getPot_id());
                         context.startActivity(intent);
                     }
                  //   Toast.makeText(context,"Notification status not update",Toast.LENGTH_LONG).show();

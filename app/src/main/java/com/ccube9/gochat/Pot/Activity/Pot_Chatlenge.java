@@ -176,11 +176,7 @@ if(strshareurl != null ){
                     JSONObject jsonObject = new JSONObject(response);
 
                     if (jsonObject.getString("status").equals("1")) {
-
-
-
                         Toast.makeText(Pot_Chatlenge.this,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
-
                     }else{
                         Toast.makeText(Pot_Chatlenge.this,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
                     }

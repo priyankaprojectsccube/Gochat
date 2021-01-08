@@ -143,6 +143,7 @@ public class NotificationActivity extends AppCompatActivity {
                             notification.setMain_challenge_id(jsonObject1.getString("main_challenge_id"));
                             notification.setPot_id(jsonObject1.getString("pot_id"));
                             notification.setIntitatiofundgo(jsonObject1.getString("intitatiofundgo"));
+                            notification.setInitiatefollow(jsonObject1.getString("initiatefollow"));
 
 
 

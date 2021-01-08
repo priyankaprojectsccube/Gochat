@@ -82,7 +82,7 @@ public class MyChallengeDetailActivity  extends AppCompatActivity implements OnM
     private LatLng latLng;
     private POJO pojo1;
 
-    private String username,contactnumber,tofollowid,subscribe_count,strwinnername;
+    private String username,contactnumber,tofollowid,subscribe_count,strwinnername,strmainchallengeid;
     private RelativeLayout challengerdetail,acceptedchallenge_rellay;
 
     @Override
@@ -137,7 +137,7 @@ public class MyChallengeDetailActivity  extends AppCompatActivity implements OnM
 
             pojo1= (POJO) intent.getSerializableExtra("mychallengedetail");
 
-
+            strmainchallengeid = pojo1.getMainchallengeid();
 
             StringRequest stringRequest=new StringRequest(Request.Method.POST, WebUrl.ChallengeDetails, new Response.Listener<String>() {
                 @Override
@@ -268,7 +268,7 @@ public class MyChallengeDetailActivity  extends AppCompatActivity implements OnM
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String,String> param=new HashMap<>();
 
-                    param.put("main_challenge_id",pojo1.getMainchallengeid());
+                    param.put("main_challenge_id",strmainchallengeid);
                     param.put("user_id", PrefManager.getUserId(MyChallengeDetailActivity.this));
 
                     return param;
@@ -290,11 +290,149 @@ public class MyChallengeDetailActivity  extends AppCompatActivity implements OnM
 
 
 
+        }else if(intent.hasExtra("main_challenge_id")) {
+
+            strmainchallengeid = intent.getStringExtra("main_challenge_id");
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, WebUrl.ChallengeDetails, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Log.d("fromnot", response);
+
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+
+                        if (jsonObject.getString("status").equals("1")) {
+                            subscribe_count = jsonObject.getString("subcribe_count_id");
+                            JSONObject jsonObject1 = jsonObject.getJSONArray("challenge_detail").getJSONObject(0);
+
+                            if (jsonObject.getString("challenge_accepted_status").equals("1")) {
+                                acceptedchallenge_rellay.setVisibility(View.VISIBLE);
+                            }
+
+                            if (jsonObject.getString("challenge_accepted_status").equals("0")) {
+                                acceptchallenge_rellay.setVisibility(View.VISIBLE);
+                            }
+
+                            String title = jsonObject1.getString("challenge_name");
+
+                            texttitle.setText(Character.toUpperCase(title.charAt(0)) + title.substring(1));
+                            challengename.setText(Character.toUpperCase(title.charAt(0)) + title.substring(1));
+                            desc.setText(jsonObject1.getString("description"));
+                            txt_location.setText(jsonObject1.getString("location"));
+                            txtdatetime.setText(jsonObject1.getString("date"));
+                            lat = Double.valueOf(jsonObject1.getString("lat"));
+                            lon = Double.valueOf(jsonObject1.getString("lang"));
+                            if (subscribe_count.equals("0")) {
+                                peoplesubscribed.setVisibility(View.GONE);
+                                //peoplesubscribed.setText("No Subcribers");
+                            } else if (subscribe_count.equals("1")) {
+                                peoplesubscribed.setText(subscribe_count + "subscriber");
+                            } else {
+                                peoplesubscribed.setText(subscribe_count + "subscribers");
+                            }
+
+
+                            if (lat != null && lon != null) {
+
+                                latLng = new LatLng(lat, lon);
+                            }
+                            if (latLng != null) {
+                                mMap.addMarker(new MarkerOptions().position(latLng).title(""));
+                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10.0f));
+                                mMap.getUiSettings().setZoomGesturesEnabled(true);
+
+                            }
+
+                            JSONObject jsonObject3 = jsonObject.getJSONArray("user_details").getJSONObject(0);
+
+                            contactnumber = jsonObject3.getString("mobile_number");
+                            tofollowid = jsonObject3.getString("id");
+
+
+                            username = jsonObject3.getString("first_name").concat(" " + jsonObject3.getString("last_name"));
+                            usernametextview.setText(username);
+                            Picasso.with(MyChallengeDetailActivity.this).load(Base_url.concat(jsonObject3.getString("profile_image"))).error(R.drawable.default_profile).into(profpic);
+
+                            JSONArray jsonArray = jsonObject.getJSONArray("challenge_images");
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObject2 = jsonArray.getJSONObject(i);
+                                arrayListimg.add(jsonObject2.getString("image_name"));
+                            }
+                            Log.d("fsdfdfd", String.valueOf(arrayListimg));
+                            mPager.setAdapter(new PagerImageAdapter(MyChallengeDetailActivity.this, arrayListimg, true));
+                            indicator.setCount(mPager.getIndicatorCount());
+                            mPager.setIndicatorPageChangeListener(new LoopingViewPager.IndicatorPageChangeListener() {
+                                @Override
+                                public void onIndicatorProgress(int selectingPosition, float progress) {
+                                    indicator.setProgress(selectingPosition, progress);
+                                }
+
+                                @Override
+                                public void onIndicatorPageChange(int newIndicatorPosition) {
+                                    //   indicatorView.setSelection(newIndicatorPosition);
+                                }
+                            });
+                            JSONArray jsonArray4 = jsonObject.getJSONArray("subcribe_list_pic");
+                            for (int i = 0; i < jsonArray4.length(); i++) {
+                                JSONObject jsonObject4 = jsonArray4.getJSONObject(i);
+                                String imageurl = Base_url.concat(jsonObject4.getString("profile_image"));
+                                new MyChallengeDetailActivity.MyAsyncTask().execute(imageurl);
+                            }
+                            Log.d("fsdfdfd", "hhvh");
+                        }
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError volleyError) {
+                    String message = null;
+                    if (volleyError instanceof NetworkError) {
+                        message = getResources().getString(R.string.cannotconnectinternate);
+                    } else if (volleyError instanceof ServerError) {
+                        message = getResources().getString(R.string.servernotfound);
+                    } else if (volleyError instanceof AuthFailureError) {
+                        message = getResources().getString(R.string.loginagain);
+                    } else if (volleyError instanceof ParseError) {
+                        message = getResources().getString(R.string.tryagain);
+                    } else if (volleyError instanceof NoConnectionError) {
+                        message = getResources().getString(R.string.cannotconnectinternate);
+                    } else if (volleyError instanceof TimeoutError) {
+                        message = getResources().getString(R.string.connectiontimeout);
+                    }
+                    if (message != null) {
+
+                        Toast.makeText(MyChallengeDetailActivity.this, message, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(MyChallengeDetailActivity.this, getResources().getString(R.string.anerroroccured), Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+            }) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> param = new HashMap<>();
+
+                    param.put("main_challenge_id", strmainchallengeid);
+                    param.put("user_id", PrefManager.getUserId(MyChallengeDetailActivity.this));
+
+                    return param;
+                }
+            };
+
+            MySingleton.getInstance(MyChallengeDetailActivity.this).addToRequestQueue(stringRequest);
         }
 
 
 
-        sendrequres.setOnClickListener(new View.OnClickListener() {
+            sendrequres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -364,7 +502,7 @@ public class MyChallengeDetailActivity  extends AppCompatActivity implements OnM
                         Map<String,String> param=new HashMap<>();
                         //param.put("language","1");
                         param.put("user_id",PrefManager.getUserId(MyChallengeDetailActivity.this));
-                        param.put("main_challenge_id",pojo1.getMainchallengeid());
+                        param.put("main_challenge_id",strmainchallengeid);
                         return param;
 
 
@@ -447,6 +585,7 @@ public class MyChallengeDetailActivity  extends AppCompatActivity implements OnM
 
                         param.put("user_id", PrefManager.getUserId(MyChallengeDetailActivity.this));
                         param.put("follower_id",tofollowid);
+                        param.put("main_challenge_id",strmainchallengeid);
                         //   param.put("language", "1");
 
 
@@ -647,8 +786,8 @@ public class MyChallengeDetailActivity  extends AppCompatActivity implements OnM
                 Map<String,String> param=new HashMap<>();
                 //param.put("language","1");
                 param.put("user_id",PrefManager.getUserId(MyChallengeDetailActivity.this));
-                param.put("main_challenge_id",pojo1.getMainchallengeid());
-                Log.d("mainchallengeid",pojo1.getMainchallengeid());
+                param.put("main_challenge_id",strmainchallengeid);
+                Log.d("mainchallengeid",strmainchallengeid);
                 return param;
 
 
@@ -715,8 +854,8 @@ public class MyChallengeDetailActivity  extends AppCompatActivity implements OnM
                 Map<String,String> param=new HashMap<>();
                 //param.put("language","1");
                 param.put("user_id",PrefManager.getUserId(MyChallengeDetailActivity.this));
-                param.put("main_challenge_id",pojo1.getMainchallengeid());
-                Log.d("mainchallengeid",pojo1.getMainchallengeid());
+                param.put("main_challenge_id",strmainchallengeid);
+                Log.d("mainchallengeid",strmainchallengeid);
                 return param;
 
 

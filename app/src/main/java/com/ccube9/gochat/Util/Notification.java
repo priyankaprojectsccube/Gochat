@@ -43,6 +43,15 @@ public class Notification {
 String main_challenge_id;
 String pot_id;
 String intitatiofundgo;
+String initiatefollow;
+
+    public String getInitiatefollow() {
+        return initiatefollow;
+    }
+
+    public void setInitiatefollow(String initiatefollow) {
+        this.initiatefollow = initiatefollow;
+    }
 
     public String getPot_id() {
         return pot_id;

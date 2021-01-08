@@ -80,7 +80,7 @@ public class ChallengeDetailActivity extends AppCompatActivity  implements OnMap
     private TransparentProgressDialog pd;
     private LatLng latLng;
     private POJO pojo1;
-    private String username,contactnumber,tofollowid,subscribe_count;
+    private String username,contactnumber,tofollowid,subscribe_count,strmainchallengeid;
     private RelativeLayout challengerdetail,acceptedchallenge_rellay;
 
     @Override
@@ -134,7 +134,7 @@ public class ChallengeDetailActivity extends AppCompatActivity  implements OnMap
 
             pojo1= (POJO) intent.getSerializableExtra("challengedetail");
 
-
+            strmainchallengeid = pojo1.getMainchallengeid();
 
             StringRequest stringRequest=new StringRequest(Request.Method.POST, WebUrl.ChallengeDetails, new Response.Listener<String>() {
                 @Override
@@ -265,7 +265,7 @@ public class ChallengeDetailActivity extends AppCompatActivity  implements OnMap
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String,String> param=new HashMap<>();
 
-                    param.put("main_challenge_id",pojo1.getMainchallengeid());
+                    param.put("main_challenge_id",strmainchallengeid);
                     param.put("user_id", PrefManager.getUserId(ChallengeDetailActivity.this));
 
                     return param;
@@ -273,6 +273,7 @@ public class ChallengeDetailActivity extends AppCompatActivity  implements OnMap
             };
 
             MySingleton.getInstance(ChallengeDetailActivity.this).addToRequestQueue(stringRequest);
+
 
 
 
@@ -341,7 +342,7 @@ public class ChallengeDetailActivity extends AppCompatActivity  implements OnMap
                         Map<String,String> param=new HashMap<>();
                         //param.put("language","1");
                         param.put("user_id",PrefManager.getUserId(ChallengeDetailActivity.this));
-                        param.put("main_challenge_id",pojo1.getMainchallengeid());
+                        param.put("main_challenge_id",strmainchallengeid);
                         return param;
 
 
@@ -424,6 +425,7 @@ public class ChallengeDetailActivity extends AppCompatActivity  implements OnMap
 
                         param.put("user_id", PrefManager.getUserId(ChallengeDetailActivity.this));
                         param.put("follower_id",tofollowid);
+                        param.put("main_challenge_id",strmainchallengeid);
                      //   param.put("language", "1");
 
 

@@ -30,10 +30,7 @@ import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.ccube9.gochat.Challenge.Activity.ChallengeDetailActivity;
-import com.ccube9.gochat.Challenge.Activity.FavouriteChallengeActivity;
-import com.ccube9.gochat.Home.HomeActivity;
-import com.ccube9.gochat.Pot.Adapter.MyPotAdapter;
+
 import com.ccube9.gochat.Pot.Adapter.SearchPotAdapter;
 import com.ccube9.gochat.R;
 import com.ccube9.gochat.Search.Activity.SearchActivity;

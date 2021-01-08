@@ -20,10 +20,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.ccube9.gochat.Challenge.Activity.ChallengeDetailActivity;
+import com.ccube9.gochat.Challenge.Activity.MyChallengeDetailActivity;
 import com.ccube9.gochat.Home.Fragment.NotificationActivity;
 import com.ccube9.gochat.Home.Fragment.Request_for_winner;
 import com.ccube9.gochat.Pot.Activity.Pot_Chatlenge;
 import com.ccube9.gochat.R;
+import com.ccube9.gochat.Search.Activity.SearchActivity;
 import com.ccube9.gochat.Util.Notification;
 import com.ccube9.gochat.Util.POJO;
 import com.ccube9.gochat.Util.WebUrl;
@@ -130,6 +133,11 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                                         intent.putExtra("pot_id",notification.getPot_id());
                                         context.startActivity(intent);
                                     }
+                                    else  if(notification.getInitiatefollow().equals("1")){
+                                        Intent intent = new Intent(context, MyChallengeDetailActivity.class);
+                                        intent.putExtra("main_challenge_id", notification.getMain_challenge_id());
+                                        context.startActivity(intent);
+                                    }
                                 }
                                 else {
                                     Toast.makeText(context,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
@@ -177,6 +185,11 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                         Intent intent = new Intent(context, Pot_Chatlenge.class);
                         intent.putExtra("gobacknot","gobacknot");
                         intent.putExtra("pot_id",notification.getPot_id());
+                        context.startActivity(intent);
+                    }
+                    else  if(notification.getInitiatefollow().equals("1")){
+                        Intent intent = new Intent(context, MyChallengeDetailActivity.class);
+                        intent.putExtra("main_challenge_id", notification.getMain_challenge_id());
                         context.startActivity(intent);
                     }
                  //   Toast.makeText(context,"Notification status not update",Toast.LENGTH_LONG).show();

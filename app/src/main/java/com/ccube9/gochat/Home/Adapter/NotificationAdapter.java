@@ -24,6 +24,8 @@ import com.ccube9.gochat.Challenge.Activity.ChallengeDetailActivity;
 import com.ccube9.gochat.Challenge.Activity.MyChallengeDetailActivity;
 import com.ccube9.gochat.Home.Fragment.NotificationActivity;
 import com.ccube9.gochat.Home.Fragment.Request_for_winner;
+import com.ccube9.gochat.Home.HomeActivity;
+import com.ccube9.gochat.News.Activity.NewsFunctions;
 import com.ccube9.gochat.Pot.Activity.Pot_Chatlenge;
 import com.ccube9.gochat.R;
 import com.ccube9.gochat.Search.Activity.SearchActivity;
@@ -138,6 +140,16 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                                         intent.putExtra("main_challenge_id", notification.getMain_challenge_id());
                                         context.startActivity(intent);
                                     }
+                                    else if(notification.getAdvertisement_initiate().equals("1") ||
+                                    notification.getAdv_subscrib_initiate().equals("1")  ||
+                                    notification.getAdv_comment_initiate().equals("1") ||
+                                    notification.getAdv_comment_like_initiate().equals("1") ||
+                                    notification.getAdv_comment_reply_initiate().equals("1"))
+                                    {
+                                        Intent intent1=new Intent(context, NewsFunctions.class);
+//                        intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        context.startActivity(intent1);
+                                    }
                                 }
                                 else {
                                     Toast.makeText(context,jsonObject.getString("message"),Toast.LENGTH_SHORT).show();
@@ -191,6 +203,16 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                         Intent intent = new Intent(context, MyChallengeDetailActivity.class);
                         intent.putExtra("main_challenge_id", notification.getMain_challenge_id());
                         context.startActivity(intent);
+                    }
+
+                    else if(notification.getAdvertisement_initiate().equals("1") ||
+                            notification.getAdv_subscrib_initiate().equals("1")  ||
+                            notification.getAdv_comment_initiate().equals("1") ||
+                            notification.getAdv_comment_like_initiate().equals("1") ||
+                            notification.getAdv_comment_reply_initiate().equals("1")){
+                        Intent intent1=new Intent(context, NewsFunctions.class);
+//                        intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        context.startActivity(intent1);
                     }
                  //   Toast.makeText(context,"Notification status not update",Toast.LENGTH_LONG).show();
                 }

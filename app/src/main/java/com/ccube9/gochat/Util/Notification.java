@@ -44,6 +44,51 @@ String main_challenge_id;
 String pot_id;
 String intitatiofundgo;
 String initiatefollow;
+String advertisement_initiate;
+String adv_subscrib_initiate;
+String adv_comment_initiate;
+String adv_comment_like_initiate;
+String adv_comment_reply_initiate;
+
+    public String getAdv_comment_reply_initiate() {
+        return adv_comment_reply_initiate;
+    }
+
+    public void setAdv_comment_reply_initiate(String adv_comment_reply_initiate) {
+        this.adv_comment_reply_initiate = adv_comment_reply_initiate;
+    }
+
+    public String getAdv_comment_like_initiate() {
+        return adv_comment_like_initiate;
+    }
+
+    public void setAdv_comment_like_initiate(String adv_comment_like_initiate) {
+        this.adv_comment_like_initiate = adv_comment_like_initiate;
+    }
+
+    public String getAdv_comment_initiate() {
+        return adv_comment_initiate;
+    }
+
+    public void setAdv_comment_initiate(String adv_comment_initiate) {
+        this.adv_comment_initiate = adv_comment_initiate;
+    }
+
+    public String getAdv_subscrib_initiate() {
+        return adv_subscrib_initiate;
+    }
+
+    public void setAdv_subscrib_initiate(String adv_subscrib_initiate) {
+        this.adv_subscrib_initiate = adv_subscrib_initiate;
+    }
+
+    public String getAdvertisement_initiate() {
+        return advertisement_initiate;
+    }
+
+    public void setAdvertisement_initiate(String advertisement_initiate) {
+        this.advertisement_initiate = advertisement_initiate;
+    }
 
     public String getInitiatefollow() {
         return initiatefollow;

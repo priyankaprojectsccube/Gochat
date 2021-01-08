@@ -144,6 +144,11 @@ public class NotificationActivity extends AppCompatActivity {
                             notification.setPot_id(jsonObject1.getString("pot_id"));
                             notification.setIntitatiofundgo(jsonObject1.getString("intitatiofundgo"));
                             notification.setInitiatefollow(jsonObject1.getString("initiatefollow"));
+                            notification.setAdvertisement_initiate(jsonObject1.getString("advertisement_initiate"));
+                            notification.setAdv_subscrib_initiate(jsonObject1.getString("adv_subscrib_initiate"));
+                            notification.setAdv_comment_initiate(jsonObject1.getString("adv_comment_initiate"));
+                            notification.setAdv_comment_like_initiate(jsonObject1.getString("adv_comment_like_initiate"));
+                            notification.setAdv_comment_reply_initiate(jsonObject1.getString("adv_comment_reply_initiate"));
 
 
 
